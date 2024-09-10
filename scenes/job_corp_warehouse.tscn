@@ -1,0 +1,135 @@
+[gd_scene load_steps=15 format=3 uid="uid://u2fgvdawyr4s"]
+
+[ext_resource type="PackedScene" uid="uid://6gs11pnmf4lk" path="res://scenes/player.tscn" id="1_gf5af"]
+[ext_resource type="Shader" path="res://shaders/psx.gdshader" id="1_phurg"]
+[ext_resource type="Shader" path="res://shaders/ps1_post_processing.gdshader" id="1_yyrm2"]
+[ext_resource type="Script" path="res://scenes/sub_viewport_container.gd" id="2_5uw6h"]
+[ext_resource type="Texture2D" uid="uid://dik0aw0tirvok" path="res://textures/moss ground.png" id="2_edfeh"]
+[ext_resource type="Texture2D" uid="uid://bhsar6vlgcrrq" path="res://textures/metal rusted sheets.png" id="3_ks46b"]
+[ext_resource type="Texture2D" uid="uid://7nnvtil57fjy" path="res://textures/damaged concrete.png" id="4_0xk8h"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0u6t1"]
+shader = ExtResource("1_yyrm2")
+shader_parameter/enabled = true
+shader_parameter/dithering = true
+shader_parameter/colors = 12
+shader_parameter/dither_size = 1
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ih6ya"]
+sky_top_color = Color(0.626723, 0.381174, 0.171093, 1)
+sky_horizon_color = Color(0.706681, 0.637544, 0.576023, 1)
+ground_horizon_color = Color(0.706681, 0.637544, 0.576023, 1)
+
+[sub_resource type="Sky" id="Sky_b8b34"]
+sky_material = SubResource("ProceduralSkyMaterial_ih6ya")
+
+[sub_resource type="Environment" id="Environment_5fl0s"]
+background_mode = 2
+sky = SubResource("Sky_b8b34")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xwngl"]
+render_priority = 0
+shader = ExtResource("1_phurg")
+shader_parameter/point_size = null
+shader_parameter/roughness = null
+shader_parameter/metallic_texture_channel = null
+shader_parameter/specular = null
+shader_parameter/metallic = null
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = null
+shader_parameter/uv1_scale = null
+shader_parameter/uv1_offset = null
+shader_parameter/uv2_scale = null
+shader_parameter/uv2_offset = null
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/resolution = Vector2i(320, 240)
+shader_parameter/affine_mapping = false
+shader_parameter/alpha_scissor = 0.5
+shader_parameter/jitter = 0.25
+shader_parameter/texture_albedo = ExtResource("2_edfeh")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jvh3q"]
+render_priority = 0
+shader = ExtResource("1_phurg")
+shader_parameter/point_size = null
+shader_parameter/roughness = null
+shader_parameter/metallic_texture_channel = null
+shader_parameter/specular = null
+shader_parameter/metallic = 36.005
+shader_parameter/emission = null
+shader_parameter/emission_energy = null
+shader_parameter/uv1_scale = null
+shader_parameter/uv1_offset = null
+shader_parameter/uv2_scale = null
+shader_parameter/uv2_offset = null
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/resolution = Vector2i(320, 240)
+shader_parameter/affine_mapping = false
+shader_parameter/alpha_scissor = 0.5
+shader_parameter/jitter = 0.25
+shader_parameter/texture_metallic = ExtResource("3_ks46b")
+shader_parameter/texture_albedo = ExtResource("3_ks46b")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_irlpt"]
+render_priority = 0
+shader = ExtResource("1_phurg")
+shader_parameter/point_size = 0.0
+shader_parameter/roughness = 0.0
+shader_parameter/metallic_texture_channel = null
+shader_parameter/specular = null
+shader_parameter/metallic = null
+shader_parameter/emission = null
+shader_parameter/emission_energy = null
+shader_parameter/uv1_scale = null
+shader_parameter/uv1_offset = null
+shader_parameter/uv2_scale = null
+shader_parameter/uv2_offset = null
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/resolution = Vector2i(320, 240)
+shader_parameter/affine_mapping = false
+shader_parameter/alpha_scissor = 0.5
+shader_parameter/jitter = 0.25
+shader_parameter/texture_roughness = ExtResource("4_0xk8h")
+shader_parameter/texture_albedo = ExtResource("4_0xk8h")
+
+[node name="SubViewportContainer" type="SubViewportContainer"]
+material = SubResource("ShaderMaterial_0u6t1")
+offset_left = 3.0
+offset_right = 515.0
+offset_bottom = 512.0
+script = ExtResource("2_5uw6h")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+handle_input_locally = false
+size = Vector2i(1152, 648)
+render_target_update_mode = 4
+
+[node name="JobCorpWarehouse" type="Node3D" parent="SubViewport"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="SubViewport/JobCorpWarehouse"]
+environment = SubResource("Environment_5fl0s")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewport/JobCorpWarehouse"]
+transform = Transform3D(-0.653479, -0.654848, -0.379658, 0.0870121, -0.563227, 0.821708, -0.751927, 0.503934, 0.425037, 0, 4.78456, 0)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="SubViewport/JobCorpWarehouse"]
+transform = Transform3D(13.6942, 0, 0, 0, 0.0341773, 0, 0, 0, 14.128, 0, 0, 0)
+use_collision = true
+material = SubResource("ShaderMaterial_xwngl")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="SubViewport/JobCorpWarehouse"]
+transform = Transform3D(3.32244, 0, 0, 0, 2.60211, 0, 0, 0, 4.2022, -4.15656, -0.104173, -3.30897)
+use_collision = true
+size = Vector3(1, 0.988281, 1)
+material = SubResource("ShaderMaterial_jvh3q")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="SubViewport/JobCorpWarehouse"]
+transform = Transform3D(3.32244, 0, 0, 0, 2.60211, 0, 0, 0, 4.2022, -4.15656, 0.602784, 2.70315)
+use_collision = true
+size = Vector3(1, 1.14502, 1)
+material = SubResource("ShaderMaterial_irlpt")
+
+[node name="Player" parent="SubViewport/JobCorpWarehouse" instance=ExtResource("1_gf5af")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.15661, 0)
