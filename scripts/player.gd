@@ -9,7 +9,7 @@ var sensitivity = 0.002
 
 # Head Bob Variables
 # How often
-const BOB_FREQ = 2.0
+const BOB_FREQ = 2.5
 # How far up and down
 const BOB_AMP = 0.1
 # How far along the sine function we're along

@@ -1,0 +1,28 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://b1bspucnp0yqy"]
+
+[ext_resource type="Shader" path="res://shaders/psx.gdshader" id="1_nc6ai"]
+[ext_resource type="Texture2D" uid="uid://mxnav4j0c2uu" path="res://textures/warehouse_racks_Yellow Rusted Paint.png" id="2_ljrkf"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_nc6ai")
+shader_parameter/point_size = null
+shader_parameter/roughness = 0.0
+shader_parameter/metallic_texture_channel = null
+shader_parameter/specular = 0.0
+shader_parameter/metallic = 0.0
+shader_parameter/emission = null
+shader_parameter/emission_energy = null
+shader_parameter/uv1_scale = null
+shader_parameter/uv1_offset = null
+shader_parameter/uv2_scale = null
+shader_parameter/uv2_offset = null
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/resolution = Vector2i(320, 240)
+shader_parameter/affine_mapping = false
+shader_parameter/alpha_scissor = 0.5
+shader_parameter/jitter = 0.15
+shader_parameter/texture_metallic = ExtResource("2_ljrkf")
+shader_parameter/texture_roughness = ExtResource("2_ljrkf")
+shader_parameter/texture_emission = ExtResource("2_ljrkf")
+shader_parameter/texture_albedo = ExtResource("2_ljrkf")

@@ -1,0 +1,92 @@
+[gd_scene load_steps=8 format=3 uid="uid://bktcoa28q5ae6"]
+
+[ext_resource type="PackedScene" uid="uid://ctsr77kvomjeg" path="res://models/glb files/warehouse_racks.glb" id="1_fqhrf"]
+[ext_resource type="Shader" path="res://shaders/psx.gdshader" id="2_31xu7"]
+[ext_resource type="Texture2D" uid="uid://c56d47br7xvhk" path="res://textures/warehouse_racks_Blue Rusted Paint.png" id="3_m7jqd"]
+[ext_resource type="Material" uid="uid://b1bspucnp0yqy" path="res://materials/yellow_rusted_metal.tres" id="4_fq3gl"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nba7s"]
+render_priority = 0
+shader = ExtResource("2_31xu7")
+shader_parameter/point_size = null
+shader_parameter/roughness = null
+shader_parameter/metallic_texture_channel = null
+shader_parameter/specular = null
+shader_parameter/metallic = null
+shader_parameter/emission = null
+shader_parameter/emission_energy = null
+shader_parameter/uv1_scale = null
+shader_parameter/uv1_offset = null
+shader_parameter/uv2_scale = null
+shader_parameter/uv2_offset = null
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/resolution = Vector2i(320, 240)
+shader_parameter/affine_mapping = false
+shader_parameter/alpha_scissor = 0.5
+shader_parameter/jitter = 0.25
+shader_parameter/texture_albedo = ExtResource("3_m7jqd")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yj8s4"]
+render_priority = 0
+shader = ExtResource("2_31xu7")
+shader_parameter/point_size = null
+shader_parameter/roughness = null
+shader_parameter/metallic_texture_channel = null
+shader_parameter/specular = null
+shader_parameter/metallic = null
+shader_parameter/emission = null
+shader_parameter/emission_energy = null
+shader_parameter/uv1_scale = null
+shader_parameter/uv1_offset = null
+shader_parameter/uv2_scale = null
+shader_parameter/uv2_offset = null
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/resolution = Vector2i(320, 240)
+shader_parameter/affine_mapping = false
+shader_parameter/alpha_scissor = 0.5
+shader_parameter/jitter = 0.25
+shader_parameter/texture_albedo = ExtResource("3_m7jqd")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mcpkq"]
+render_priority = 0
+shader = ExtResource("2_31xu7")
+shader_parameter/point_size = null
+shader_parameter/roughness = null
+shader_parameter/metallic_texture_channel = null
+shader_parameter/specular = null
+shader_parameter/metallic = null
+shader_parameter/emission = null
+shader_parameter/emission_energy = null
+shader_parameter/uv1_scale = null
+shader_parameter/uv1_offset = null
+shader_parameter/uv2_scale = null
+shader_parameter/uv2_offset = null
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/resolution = Vector2i(320, 240)
+shader_parameter/affine_mapping = false
+shader_parameter/alpha_scissor = 0.5
+shader_parameter/jitter = 0.25
+shader_parameter/texture_albedo = ExtResource("3_m7jqd")
+
+[node name="warehouse_racks" instance=ExtResource("1_fqhrf")]
+
+[node name="Shelf1" parent="." index="0"]
+surface_material_override/0 = SubResource("ShaderMaterial_nba7s")
+
+[node name="cuboid0" parent="." index="1"]
+surface_material_override/0 = ExtResource("4_fq3gl")
+
+[node name="cuboid1" parent="." index="2"]
+surface_material_override/0 = ExtResource("4_fq3gl")
+
+[node name="cuboid2" parent="." index="3"]
+surface_material_override/0 = ExtResource("4_fq3gl")
+
+[node name="cuboid3" parent="." index="4"]
+surface_material_override/0 = ExtResource("4_fq3gl")
+
+[node name="Shelf3" parent="." index="5"]
+surface_material_override/0 = SubResource("ShaderMaterial_yj8s4")
+
+[node name="Shelf2" parent="." index="6"]
+surface_material_override/0 = SubResource("ShaderMaterial_mcpkq")

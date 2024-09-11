@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://hxjlamxcfu87"]
+
+[ext_resource type="Texture2D" uid="uid://c106w2a1ejtj7" path="res://textures/gravel 1.png" id="1_t7t5w"]
+
+[resource]
+albedo_texture = ExtResource("1_t7t5w")
+uv1_scale = Vector3(5.93, 150.35, 1)
+texture_filter = 0

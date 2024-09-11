@@ -11,15 +11,13 @@ config_version=5
 [application]
 
 config/name="Lunch Boy"
-run/main_scene="res://scenes/job_corp_warehouse.tscn"
+run/main_scene="res://scenes/job_corp_outside.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
 [display]
 
 window/size/mode=3
-window/size/window_width_override=1152
-window/size/window_height_override=648
 
 [file_customization]
 
@@ -29,6 +27,10 @@ folder_colors={
 "res://shaders/": "pink",
 "res://textures/": "orange"
 }
+
+[filesystem]
+
+import/blender/enabled=false
 
 [input]
 
@@ -67,3 +69,5 @@ sprint={
 
 textures/canvas_textures/default_texture_filter=0
 textures/canvas_textures/default_texture_repeat=1
+anti_aliasing/screen_space_roughness_limiter/enabled=false
+scaling_3d/mode=1

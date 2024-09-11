@@ -32,7 +32,7 @@ uniform sampler2D texture_albedo : source_color, filter_nearest, repeat_enable;
 uniform ivec2 resolution = ivec2(320, 240);
 uniform bool affine_mapping = false;
 uniform float alpha_scissor : hint_range(0, 1) = 0.5;
-uniform float jitter: hint_range(0, 1) = 0.25;
+uniform float jitter: hint_range(0, 1) = 0.15;
 
 
 void vertex()
