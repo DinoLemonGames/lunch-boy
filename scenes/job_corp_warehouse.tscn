@@ -2,9 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://6gs11pnmf4lk" path="res://scenes/player.tscn" id="1_gf5af"]
 [ext_resource type="Shader" path="res://shaders/ps1_post_processing.gdshader" id="1_yyrm2"]
-[ext_resource type="Script" path="res://scenes/sub_viewport_container.gd" id="2_5uw6h"]
+[ext_resource type="Script" path="res://scripts/sub_viewport_container.gd" id="2_5uw6h"]
 [ext_resource type="Texture2D" uid="uid://d4dpwst4oij6l" path="res://textures/concrete 8.jpg" id="3_ba6ou"]
-[ext_resource type="PackedScene" uid="uid://bktcoa28q5ae6" path="res://models/props/warehouse_racks.tscn" id="7_no8pb"]
+[ext_resource type="PackedScene" uid="uid://bktcoa28q5ae6" path="res://scenes/props/warehouse_racks.tscn" id="7_no8pb"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0u6t1"]
 shader = ExtResource("1_yyrm2")

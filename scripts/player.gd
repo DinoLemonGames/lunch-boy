@@ -1,8 +1,8 @@
 extends CharacterBody3D
 
 var speed
-const WALK_SPEED = 5.0
-const SPRINT_SPEED = 8.0
+const WALK_SPEED = 4.0
+const SPRINT_SPEED = 6.0
 const JUMP_VELOCITY = 4.5
 
 var sensitivity = 0.002
@@ -84,3 +84,6 @@ func _headbob(time) -> Vector3:
 	pos.y = sin(time * BOB_FREQ) * BOB_AMP
 	pos.x = cos(time * BOB_FREQ / 2) * BOB_AMP
 	return pos
+
+func _on_doorway_body_entered(body):
+	get_tree().call_deferred("change_scene_to_file", "res://scenes/job_corp_warehouse.tscn")

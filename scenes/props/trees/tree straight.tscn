@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://d2h2l3cca4n3y"]
+
+[ext_resource type="Texture2D" uid="uid://js2hwxidtfs" path="res://textures/trees/straight sparse.png" id="1_oiinn"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_3y1ss"]
+radius = 0.0920318
+
+[node name="TreeStraight" type="StaticBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.899368, 0)
+shape = SubResource("CylinderShape3D_3y1ss")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1.62635, 0, 1.62635, 0, 2.3, 0, -1.62635, 0, 1.62635, -0.725, 5.16, 0.72)
+texture_filter = 0
+texture = ExtResource("1_oiinn")
+
+[node name="Sprite3D2" type="Sprite3D" parent="."]
+transform = Transform3D(1.62635, 0, -1.62635, 0, 2.3, 0, 1.62635, 0, 1.62635, -0.73, 5.16, -0.73)
+texture_filter = 0
+texture = ExtResource("1_oiinn")

@@ -1,0 +1,57 @@
+[gd_scene load_steps=6 format=3 uid="uid://dlb2myj4qd3ad"]
+
+[ext_resource type="PackedScene" uid="uid://cybbll762vbml" path="res://models/glb files/JobCorp Sign/job corp sign.glb" id="1_ei74w"]
+[ext_resource type="Shader" path="res://shaders/psx.gdshader" id="2_k2cph"]
+[ext_resource type="Texture2D" uid="uid://dj783f603wec8" path="res://models/glb files/JobCorp Sign/job corp sign_metal rusty.png" id="3_ekhyh"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_y4tth"]
+render_priority = 0
+shader = ExtResource("2_k2cph")
+shader_parameter/point_size = null
+shader_parameter/roughness = null
+shader_parameter/metallic_texture_channel = null
+shader_parameter/specular = 0.47
+shader_parameter/metallic = 100.0
+shader_parameter/emission = null
+shader_parameter/emission_energy = null
+shader_parameter/uv1_scale = null
+shader_parameter/uv1_offset = null
+shader_parameter/uv2_scale = null
+shader_parameter/uv2_offset = null
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/resolution = Vector2i(320, 240)
+shader_parameter/affine_mapping = false
+shader_parameter/alpha_scissor = 0.5
+shader_parameter/jitter = 0.15
+shader_parameter/texture_metallic = ExtResource("3_ekhyh")
+shader_parameter/texture_albedo = ExtResource("3_ekhyh")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_a08s1"]
+render_priority = 0
+shader = ExtResource("2_k2cph")
+shader_parameter/point_size = null
+shader_parameter/roughness = null
+shader_parameter/metallic_texture_channel = null
+shader_parameter/specular = null
+shader_parameter/metallic = null
+shader_parameter/emission = Color(1, 0, 0, 1)
+shader_parameter/emission_energy = 50.0
+shader_parameter/uv1_scale = null
+shader_parameter/uv1_offset = null
+shader_parameter/uv2_scale = null
+shader_parameter/uv2_offset = null
+shader_parameter/albedo = Color(1, 0.643137, 0.623529, 1)
+shader_parameter/resolution = Vector2i(320, 240)
+shader_parameter/affine_mapping = false
+shader_parameter/alpha_scissor = 0.5
+shader_parameter/jitter = 0.15
+
+[node name="job corp sign" instance=ExtResource("1_ei74w")]
+
+[node name="Job Corp_" parent="." index="0"]
+transform = Transform3D(3, 0, 0, 0, 0, -3, 0, 3, 0, 0, 0, -0.0454521)
+surface_material_override/0 = SubResource("ShaderMaterial_y4tth")
+
+[node name="Job Corp_ Light" parent="." index="1"]
+transform = Transform3D(3, 0, 0, 0, 0, -3, 0, 3, 0, 0, 0, 4.96228)
+surface_material_override/0 = SubResource("ShaderMaterial_a08s1")

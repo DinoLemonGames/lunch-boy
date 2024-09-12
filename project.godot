@@ -22,15 +22,22 @@ window/size/mode=3
 [file_customization]
 
 folder_colors={
+"res://materials/": "green",
+"res://models/": "gray",
 "res://scenes/": "purple",
 "res://scripts/": "blue",
 "res://shaders/": "pink",
+"res://sounds/": "yellow",
 "res://textures/": "orange"
 }
 
 [filesystem]
 
 import/blender/enabled=false
+
+[global_group]
+
+player=""
 
 [input]
 
