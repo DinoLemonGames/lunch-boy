@@ -22,6 +22,14 @@ const FOV_CHANGE = 1.5
 @onready var head = $Head
 @onready var camera = $Head/Camera3D
 
+# Audio
+@onready var sn_walking = $AudioWalking
+@onready var sn_walking_pants = $AudioWalkingPants
+var played_pants = false
+var played_walking = false
+var landed = false
+@onready var sn_running = $AudioRunning
+
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
@@ -42,6 +50,7 @@ func _physics_process(delta):
 	if not is_on_floor():
 		# Gravity in settings is 9.8
 		velocity += get_gravity() * delta
+		landed = false
 
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
@@ -57,6 +66,9 @@ func _physics_process(delta):
 	var input_dir = Input.get_vector("left", "right", "forward", "back")
 	var direction = (head.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if is_on_floor():
+		if !landed:
+			sn_walking.play()
+			landed = true
 		if direction:
 			velocity.x = direction.x * speed
 			velocity.z = direction.z * speed
@@ -82,6 +94,25 @@ func _physics_process(delta):
 func _headbob(time) -> Vector3:
 	var pos = Vector3.ZERO
 	pos.y = sin(time * BOB_FREQ) * BOB_AMP
+	# Walking Audio
+	if speed == WALK_SPEED:
+		if pos.y < -0.099:
+			if !sn_walking.playing and !played_walking:
+				sn_walking.play()
+				played_walking = true
+				played_pants = false
+		if pos.y > 0.099:
+			#if !sn_walking_pants.playing and !played_pants:
+			sn_walking_pants.play()
+			played_pants = true
+			played_walking = false
+	# Running Audio
+	elif speed == SPRINT_SPEED:
+		if pos.y < -0.099:
+			sn_running.play()
+		if pos.y > 0.099:
+			sn_walking_pants.play()
+	
 	pos.x = cos(time * BOB_FREQ / 2) * BOB_AMP
 	return pos
 
