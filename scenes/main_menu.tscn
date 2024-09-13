@@ -1,0 +1,287 @@
+[gd_scene load_steps=29 format=3 uid="uid://c432guy8kng2g"]
+
+[ext_resource type="Shader" path="res://shaders/ps1_post_processing.gdshader" id="1_01qfx"]
+[ext_resource type="Script" path="res://scripts/sub_viewport_container.gd" id="2_arf3b"]
+[ext_resource type="Script" path="res://scripts/world_environment.gd" id="3_47vck"]
+[ext_resource type="PackedScene" uid="uid://dlb2myj4qd3ad" path="res://scenes/props/job_corp_sign.tscn" id="6_43oet"]
+[ext_resource type="PackedScene" uid="uid://04f264xwrjls" path="res://models/glb files/job corp world set.glb" id="7_t1v31"]
+[ext_resource type="PackedScene" uid="uid://detie63k58y36" path="res://scenes/props/lightpost.tscn" id="8_h3c2l"]
+[ext_resource type="PackedScene" uid="uid://8pbv2yhp3fog" path="res://scenes/props/trees/tree purple.tscn" id="9_ro3yh"]
+[ext_resource type="PackedScene" uid="uid://bk88b3u355qk2" path="res://scenes/props/trees/tree_billboard.tscn" id="10_rqter"]
+[ext_resource type="PackedScene" uid="uid://dgfegdl4x0gxs" path="res://scenes/props/trees/tree normal.tscn" id="10_vu7op"]
+[ext_resource type="PackedScene" uid="uid://3nhnx2p17gsm" path="res://scenes/props/trees/tree straight_billboard.tscn" id="11_1lmes"]
+[ext_resource type="PackedScene" uid="uid://d2h2l3cca4n3y" path="res://scenes/props/trees/tree straight.tscn" id="11_xfnnu"]
+[ext_resource type="FontFile" uid="uid://cvtvb4r52pd1o" path="res://fonts/Montserrat-Regular.ttf" id="12_35688"]
+[ext_resource type="Script" path="res://scripts/menu_camera.gd" id="12_mcaxc"]
+[ext_resource type="Script" path="res://scripts/menu.gd" id="12_qno6c"]
+[ext_resource type="AudioStream" uid="uid://bykrmymgcrj4q" path="res://sounds/button_hover.ogg" id="15_qmxj0"]
+[ext_resource type="AudioStream" uid="uid://qppphxgyvlh4" path="res://sounds/play_button_select.ogg" id="16_uiprr"]
+[ext_resource type="AudioStream" uid="uid://clptaoyavic81" path="res://sounds/mainmenu_ambiance.wav" id="17_6hx1c"]
+[ext_resource type="AudioStream" uid="uid://bpa6v73mu8wby" path="res://sounds/main_menu_music.wav" id="18_tw858"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0u6t1"]
+shader = ExtResource("1_01qfx")
+shader_parameter/enabled = true
+shader_parameter/dithering = true
+shader_parameter/colors = 12
+shader_parameter/dither_size = 1
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ih6ya"]
+sky_top_color = Color(0.626723, 0.381174, 0.171093, 1)
+sky_horizon_color = Color(0.706681, 0.637544, 0.576023, 1)
+ground_horizon_color = Color(0.706681, 0.637544, 0.576023, 1)
+
+[sub_resource type="Sky" id="Sky_b8b34"]
+sky_material = SubResource("ProceduralSkyMaterial_ih6ya")
+
+[sub_resource type="Environment" id="Environment_5fl0s"]
+background_mode = 2
+sky = SubResource("Sky_b8b34")
+tonemap_mode = 2
+glow_enabled = true
+fog_mode = 1
+fog_light_color = Color(0.678989, 0.512028, 0.361175, 1)
+fog_sun_scatter = 0.06
+fog_density = 1.0
+fog_aerial_perspective = 0.252
+fog_depth_begin = 1.0
+fog_depth_end = 35.0
+volumetric_fog_density = 0.0289
+volumetric_fog_albedo = Color(0.678431, 0.513726, 0.360784, 1)
+volumetric_fog_emission = Color(0.520586, 0.325474, 0.177466, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_80rkf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_by0cu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_02mkb"]
+
+[sub_resource type="Animation" id="Animation_e6712"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SubViewport/JobCorpWarehouse/Camera3D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.305433, 0.383972, 0.0436332)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SubViewport/JobCorpWarehouse/Camera3D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(2.73428, 2.7522, -4.31518)]
+}
+
+[sub_resource type="Animation" id="Animation_ht337"]
+resource_name = "menu_camera_anim"
+length = 10.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SubViewport/JobCorpWarehouse/Camera3D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.375246, 0.0959938, 0), Vector3(0.309796, 0.213803, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SubViewport/JobCorpWarehouse/Camera3D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(2.73946, 0.442345, -10.9746), Vector3(4.44725, 1.76443, -11.6098)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7xhfd"]
+_data = {
+"RESET": SubResource("Animation_e6712"),
+"menu_camera_anim": SubResource("Animation_ht337")
+}
+
+[node name="JobCorpOutside" type="SubViewportContainer"]
+material = SubResource("ShaderMaterial_0u6t1")
+offset_right = 1152.0
+offset_bottom = 648.0
+script = ExtResource("2_arf3b")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+handle_input_locally = false
+scaling_3d_scale = 0.5
+audio_listener_enable_3d = true
+size = Vector2i(1152, 648)
+render_target_update_mode = 4
+
+[node name="JobCorpWarehouse" type="Node3D" parent="SubViewport"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="SubViewport/JobCorpWarehouse"]
+environment = SubResource("Environment_5fl0s")
+script = ExtResource("3_47vck")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="SubViewport/JobCorpWarehouse"]
+transform = Transform3D(-0.653479, -0.654848, -0.379658, 0.0870121, -0.563227, 0.821708, -0.751927, 0.503934, 0.425037, 0, 4.78456, 0)
+
+[node name="job corp sign" parent="SubViewport/JobCorpWarehouse" instance=ExtResource("6_43oet")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.21693, -25.5127)
+
+[node name="job corp world set" parent="SubViewport/JobCorpWarehouse" instance=ExtResource("7_t1v31")]
+
+[node name="Lightposts" type="Node3D" parent="SubViewport/JobCorpWarehouse"]
+
+[node name="lightpost base" parent="SubViewport/JobCorpWarehouse/Lightposts" instance=ExtResource("8_h3c2l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.508, 1.13395, 5.17452)
+
+[node name="lightpost base2" parent="SubViewport/JobCorpWarehouse/Lightposts" instance=ExtResource("8_h3c2l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.3183, 1.14331, 5.04983)
+
+[node name="lightpost base4" parent="SubViewport/JobCorpWarehouse/Lightposts" instance=ExtResource("8_h3c2l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.9905, 0.241222, -17.905)
+
+[node name="lightpost base5" parent="SubViewport/JobCorpWarehouse/Lightposts" instance=ExtResource("8_h3c2l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.0105, -0.146556, -17.905)
+
+[node name="lightpost base3" parent="SubViewport/JobCorpWarehouse/Lightposts" instance=ExtResource("8_h3c2l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.8122, 0.969192, 5.04983)
+
+[node name="Trees" type="Node3D" parent="SubViewport/JobCorpWarehouse"]
+
+[node name="TreePurple" parent="SubViewport/JobCorpWarehouse/Trees" instance=ExtResource("9_ro3yh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.7409, 1.50919, 4.59277)
+
+[node name="TreeNormal" parent="SubViewport/JobCorpWarehouse/Trees" instance=ExtResource("10_vu7op")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.2065, 1.63553, 6.10969)
+
+[node name="TreeNormal2" parent="SubViewport/JobCorpWarehouse/Trees" instance=ExtResource("10_vu7op")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.0946, 0.0798817, -18.4039)
+
+[node name="TreePurple2" parent="SubViewport/JobCorpWarehouse/Trees" instance=ExtResource("9_ro3yh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.4801, 0.335456, -17.5197)
+
+[node name="TreePurple3" parent="SubViewport/JobCorpWarehouse/Trees" instance=ExtResource("9_ro3yh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.9334, 0.406176, -17.494)
+
+[node name="TreeStraight3" parent="SubViewport/JobCorpWarehouse/Trees" instance=ExtResource("11_xfnnu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.1828, -0.00940228, -18.6222)
+
+[node name="TreeBillboard" parent="SubViewport/JobCorpWarehouse/Trees" instance=ExtResource("10_rqter")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.74277, 0.584856, -16.9616)
+
+[node name="TreeBillboard2" parent="SubViewport/JobCorpWarehouse/Trees" instance=ExtResource("10_rqter")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.0133, 0.445655, -17.084)
+
+[node name="TreeStraight" parent="SubViewport/JobCorpWarehouse/Trees" instance=ExtResource("11_1lmes")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.7439, 0.185944, -18.4054)
+
+[node name="TreeStraight2" parent="SubViewport/JobCorpWarehouse/Trees" instance=ExtResource("11_1lmes")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.6711, 0.00432301, -18.1929)
+
+[node name="Camera3D" type="Camera3D" parent="SubViewport/JobCorpWarehouse"]
+transform = Transform3D(0.921388, -0.152982, 0.357268, 0.0416005, 0.952809, 0.300706, -0.386411, -0.262205, 0.884271, 2.73428, 2.7522, -4.31518)
+fov = 68.0
+script = ExtResource("12_mcaxc")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SubViewport/JobCorpWarehouse/Camera3D"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -260.0
+offset_top = -241.0
+offset_right = -90.0
+grow_horizontal = 0
+grow_vertical = 0
+script = ExtResource("12_qno6c")
+
+[node name="Play" type="Button" parent="SubViewport/JobCorpWarehouse/Camera3D/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(1, 0.366457, 0.31173, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.784314)
+theme_override_constants/outline_size = 22
+theme_override_fonts/font = ExtResource("12_35688")
+theme_override_font_sizes/font_size = 41
+theme_override_styles/focus = SubResource("StyleBoxEmpty_80rkf")
+text = "Play
+"
+flat = true
+alignment = 2
+
+[node name="Options" type="Button" parent="SubViewport/JobCorpWarehouse/Camera3D/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(1, 0.366457, 0.31173, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.784314)
+theme_override_constants/outline_size = 22
+theme_override_fonts/font = ExtResource("12_35688")
+theme_override_font_sizes/font_size = 41
+theme_override_styles/focus = SubResource("StyleBoxEmpty_by0cu")
+text = "Options"
+flat = true
+alignment = 2
+
+[node name="Quit to Desktop" type="Button" parent="SubViewport/JobCorpWarehouse/Camera3D/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(1, 0.366457, 0.31173, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 0.784314)
+theme_override_constants/outline_size = 22
+theme_override_fonts/font = ExtResource("12_35688")
+theme_override_font_sizes/font_size = 41
+theme_override_styles/focus = SubResource("StyleBoxEmpty_02mkb")
+text = "Quit to Desktop"
+flat = true
+alignment = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SubViewport/JobCorpWarehouse/Camera3D"]
+root_node = NodePath("../../../..")
+libraries = {
+"": SubResource("AnimationLibrary_7xhfd")
+}
+autoplay = "menu_camera_anim"
+speed_scale = 0.25
+
+[node name="HoverButtonSound" type="AudioStreamPlayer3D" parent="SubViewport/JobCorpWarehouse"]
+stream = ExtResource("15_qmxj0")
+panning_strength = 0.0
+
+[node name="PlayButtonSound" type="AudioStreamPlayer3D" parent="SubViewport/JobCorpWarehouse"]
+stream = ExtResource("16_uiprr")
+volume_db = 15.0
+panning_strength = 0.0
+
+[node name="AmbianceSound" type="AudioStreamPlayer3D" parent="SubViewport/JobCorpWarehouse"]
+stream = ExtResource("17_6hx1c")
+autoplay = true
+panning_strength = 0.0
+
+[node name="MainMenuMusic" type="AudioStreamPlayer3D" parent="SubViewport/JobCorpWarehouse"]
+stream = ExtResource("18_tw858")
+volume_db = -10.0
+autoplay = true
+panning_strength = 0.0
+
+[connection signal="mouse_entered" from="SubViewport/JobCorpWarehouse/Camera3D/VBoxContainer/Play" to="SubViewport/JobCorpWarehouse/Camera3D/VBoxContainer" method="_on_play_mouse_entered"]
+[connection signal="pressed" from="SubViewport/JobCorpWarehouse/Camera3D/VBoxContainer/Play" to="SubViewport/JobCorpWarehouse/Camera3D/VBoxContainer" method="_on_play_pressed"]
+[connection signal="mouse_entered" from="SubViewport/JobCorpWarehouse/Camera3D/VBoxContainer/Options" to="SubViewport/JobCorpWarehouse/Camera3D/VBoxContainer" method="_on_options_mouse_entered"]
+[connection signal="mouse_entered" from="SubViewport/JobCorpWarehouse/Camera3D/VBoxContainer/Quit to Desktop" to="SubViewport/JobCorpWarehouse/Camera3D/VBoxContainer" method="_on_quit_to_desktop_mouse_entered"]
+[connection signal="pressed" from="SubViewport/JobCorpWarehouse/Camera3D/VBoxContainer/Quit to Desktop" to="SubViewport/JobCorpWarehouse/Camera3D/VBoxContainer" method="_on_quit_to_desktop_pressed"]

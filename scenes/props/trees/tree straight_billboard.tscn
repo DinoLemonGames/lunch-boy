@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://3nhnx2p17gsm"]
+
+[ext_resource type="Shader" path="res://scenes/props/trees/tree_sway.gdshader" id="1_q7dnp"]
+[ext_resource type="Texture2D" uid="uid://js2hwxidtfs" path="res://textures/trees/straight sparse.png" id="1_qrslp"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_3y1ss"]
+radius = 0.0920318
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_o0n45"]
+render_priority = 0
+shader = ExtResource("1_q7dnp")
+shader_parameter/scale = Vector3(2, 2, 2)
+shader_parameter/wind_strength = 0.16
+shader_parameter/wind_speed = 0.6
+shader_parameter/albedo_texture = ExtResource("1_qrslp")
+
+[node name="TreeStraight" type="StaticBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.899368, 0)
+shape = SubResource("CylinderShape3D_3y1ss")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1.62635, 0, 1.62635, 0, 2.3, 0, -1.62635, 0, 1.62635, -0.725, 5.16, 0.72)
+material_override = SubResource("ShaderMaterial_o0n45")
+texture_filter = 0
+texture = ExtResource("1_qrslp")

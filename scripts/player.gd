@@ -5,7 +5,7 @@ const WALK_SPEED = 4.0
 const SPRINT_SPEED = 6.0
 const JUMP_VELOCITY = 4.5
 
-var sensitivity = 0.002
+var sensitivity = 0.003
 
 # Head Bob Variables
 # How often
@@ -54,13 +54,17 @@ func _physics_process(delta):
 
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
+		sn_walking_pants.play()
 		velocity.y = JUMP_VELOCITY
 	
 	# Handle Sprinting
 	if Input.is_action_pressed("sprint") and is_on_floor():
 		speed = SPRINT_SPEED
+		# Make hunger go down faster
+		$Head/Camera3D/Stomach/TummyTimer.wait_time = 0.5
 	else:
 		speed = WALK_SPEED
+		$Head/Camera3D/Stomach/TummyTimer.wait_time = 2.5
 	
 	# Get the input direction and handle the movement/deceleration.
 	var input_dir = Input.get_vector("left", "right", "forward", "back")

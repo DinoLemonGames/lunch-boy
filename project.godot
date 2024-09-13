@@ -11,13 +11,19 @@ config_version=5
 [application]
 
 config/name="Lunch Boy"
-run/main_scene="res://scenes/job_corp_outside.tscn"
+run/main_scene="res://scenes/main_menu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Transition="*res://scenes/transition.tscn"
 
 [display]
 
 window/size/mode=3
+window/stretch/mode="viewport"
+mouse_cursor/custom_image="res://textures/GUI/crosshair.png"
 
 [file_customization]
 

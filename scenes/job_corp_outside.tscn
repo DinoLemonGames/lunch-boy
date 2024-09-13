@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://cqxk8xg6ijtfk"]
+[gd_scene load_steps=23 format=3 uid="uid://cqxk8xg6ijtfk"]
 
 [ext_resource type="Shader" path="res://shaders/ps1_post_processing.gdshader" id="1_6ry8a"]
 [ext_resource type="Script" path="res://scripts/sub_viewport_container.gd" id="2_wjvoy"]
@@ -8,9 +8,12 @@
 [ext_resource type="PackedScene" uid="uid://04f264xwrjls" path="res://models/glb files/job corp world set.glb" id="6_65oys"]
 [ext_resource type="PackedScene" uid="uid://dlb2myj4qd3ad" path="res://scenes/props/job_corp_sign.tscn" id="6_i31jc"]
 [ext_resource type="PackedScene" uid="uid://detie63k58y36" path="res://scenes/props/lightpost.tscn" id="8_4rety"]
+[ext_resource type="AudioStream" uid="uid://bpo5r856iceay" path="res://sounds/buzz.wav" id="8_elr3e"]
 [ext_resource type="PackedScene" uid="uid://8pbv2yhp3fog" path="res://scenes/props/trees/tree purple.tscn" id="9_2alen"]
+[ext_resource type="AudioStream" uid="uid://dx8kqdc5jsalv" path="res://sounds/buzz_deep.wav" id="9_304gr"]
 [ext_resource type="PackedScene" uid="uid://dgfegdl4x0gxs" path="res://scenes/props/trees/tree normal.tscn" id="10_gnru7"]
 [ext_resource type="PackedScene" uid="uid://d2h2l3cca4n3y" path="res://scenes/props/trees/tree straight.tscn" id="11_4vnst"]
+[ext_resource type="AudioStream" uid="uid://clptaoyavic81" path="res://sounds/mainmenu_ambiance.wav" id="12_cd758"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0u6t1"]
 shader = ExtResource("1_6ry8a")
@@ -72,7 +75,7 @@ clearcoat = 0.0
 [sub_resource type="BoxMesh" id="BoxMesh_6ydcd"]
 material = SubResource("StandardMaterial3D_n85gv")
 
-[node name="SubViewportContainer" type="SubViewportContainer"]
+[node name="JobCorpOutside" type="SubViewportContainer"]
 material = SubResource("ShaderMaterial_0u6t1")
 offset_left = 3.0
 offset_right = 515.0
@@ -97,6 +100,13 @@ transform = Transform3D(-0.653479, -0.654848, -0.379658, 0.0870121, -0.563227, 0
 
 [node name="Player" parent="SubViewport/JobCorpWarehouse" groups=["player"] instance=ExtResource("4_nwiyy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.04886, 1.06841, 0)
+
+[node name="AmbianceSound" type="AudioStreamPlayer3D" parent="SubViewport/JobCorpWarehouse/Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.04886, -1.06841, 0)
+stream = ExtResource("12_cd758")
+volume_db = -20.0
+autoplay = true
+panning_strength = 0.0
 
 [node name="car test" parent="SubViewport/JobCorpWarehouse" instance=ExtResource("5_rrhsr")]
 transform = Transform3D(0.008, 0, 0, 0, 0.008, 0, 0, 0, 0.008, 0.028502, 0.603097, 0.0199264)
@@ -166,5 +176,17 @@ shape = SubResource("BoxShape3D_unsb2")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="SubViewport/JobCorpWarehouse/Doorway"]
 transform = Transform3D(1.71749, 0, 0, 0, 3.56667, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("BoxMesh_6ydcd")
+
+[node name="BuzzLow" type="AudioStreamPlayer3D" parent="SubViewport/JobCorpWarehouse/Doorway"]
+stream = ExtResource("9_304gr")
+unit_size = 1.0
+autoplay = true
+panning_strength = 0.0
+
+[node name="BuzzHigh" type="AudioStreamPlayer3D" parent="SubViewport/JobCorpWarehouse/Doorway"]
+stream = ExtResource("8_elr3e")
+unit_size = 1.0
+autoplay = true
+panning_strength = 0.0
 
 [connection signal="body_entered" from="SubViewport/JobCorpWarehouse/Doorway" to="SubViewport/JobCorpWarehouse/Player" method="_on_doorway_body_entered"]
