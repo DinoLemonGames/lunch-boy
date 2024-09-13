@@ -1,10 +1,10 @@
-[gd_scene load_steps=29 format=3 uid="uid://c432guy8kng2g"]
+[gd_scene load_steps=30 format=3 uid="uid://c432guy8kng2g"]
 
 [ext_resource type="Shader" path="res://shaders/ps1_post_processing.gdshader" id="1_01qfx"]
 [ext_resource type="Script" path="res://scripts/sub_viewport_container.gd" id="2_arf3b"]
 [ext_resource type="Script" path="res://scripts/world_environment.gd" id="3_47vck"]
 [ext_resource type="PackedScene" uid="uid://dlb2myj4qd3ad" path="res://scenes/props/job_corp_sign.tscn" id="6_43oet"]
-[ext_resource type="PackedScene" uid="uid://04f264xwrjls" path="res://models/glb files/job corp world set.glb" id="7_t1v31"]
+[ext_resource type="PackedScene" uid="uid://04f264xwrjls" path="res://models/glb files/Outside Set/job corp world set.glb" id="7_t1v31"]
 [ext_resource type="PackedScene" uid="uid://detie63k58y36" path="res://scenes/props/lightpost.tscn" id="8_h3c2l"]
 [ext_resource type="PackedScene" uid="uid://8pbv2yhp3fog" path="res://scenes/props/trees/tree purple.tscn" id="9_ro3yh"]
 [ext_resource type="PackedScene" uid="uid://bk88b3u355qk2" path="res://scenes/props/trees/tree_billboard.tscn" id="10_rqter"]
@@ -14,6 +14,7 @@
 [ext_resource type="FontFile" uid="uid://cvtvb4r52pd1o" path="res://fonts/Montserrat-Regular.ttf" id="12_35688"]
 [ext_resource type="Script" path="res://scripts/menu_camera.gd" id="12_mcaxc"]
 [ext_resource type="Script" path="res://scripts/menu.gd" id="12_qno6c"]
+[ext_resource type="Texture2D" uid="uid://brftyd5b3to8" path="res://textures/GUI/LunchBoy Logo PS1.png" id="15_3h1w7"]
 [ext_resource type="AudioStream" uid="uid://bykrmymgcrj4q" path="res://sounds/menu/button_hover.ogg" id="15_qmxj0"]
 [ext_resource type="AudioStream" uid="uid://qppphxgyvlh4" path="res://sounds/menu/play_button_select.ogg" id="16_uiprr"]
 [ext_resource type="AudioStream" uid="uid://clptaoyavic81" path="res://sounds/menu/mainmenu_ambiance.wav" id="17_6hx1c"]
@@ -259,6 +260,18 @@ libraries = {
 }
 autoplay = "menu_camera_anim"
 speed_scale = 0.25
+
+[node name="Logo" type="TextureRect" parent="SubViewport/JobCorpWarehouse/Camera3D"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 63.665
+offset_top = -272.43
+offset_right = 191.665
+offset_bottom = -144.43
+grow_vertical = 0
+scale = Vector2(2, 2)
+texture = ExtResource("15_3h1w7")
 
 [node name="HoverButtonSound" type="AudioStreamPlayer3D" parent="SubViewport/JobCorpWarehouse"]
 stream = ExtResource("15_qmxj0")

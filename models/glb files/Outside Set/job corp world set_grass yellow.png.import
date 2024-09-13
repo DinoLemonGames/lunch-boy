@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dypcxl8unvnfb"
-path.s3tc="res://.godot/imported/warehouse_racks_Yellow Rusted Paint.png-e18bdf9b6322c051e58af5f7e1927258.s3tc.ctex"
+uid="uid://bdbtxpvxkr4rl"
+path.s3tc="res://.godot/imported/job corp world set_grass yellow.png-637ae663bb583533a15873b613c65f20.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "a19639b277a296e88a01040dc6357802"
+"md5": "d7dd92cb15a4b3003af8a5294e1391c7"
 }
 
 [deps]
 
-source_file="res://models/glb files/warehouse_racks_Yellow Rusted Paint.png"
-dest_files=["res://.godot/imported/warehouse_racks_Yellow Rusted Paint.png-e18bdf9b6322c051e58af5f7e1927258.s3tc.ctex"]
+source_file="res://models/glb files/Outside Set/job corp world set_grass yellow.png"
+dest_files=["res://.godot/imported/job corp world set_grass yellow.png-637ae663bb583533a15873b613c65f20.s3tc.ctex"]
 
 [params]
 

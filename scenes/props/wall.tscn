@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://d0punf124xwt6"]
+
+[ext_resource type="PackedScene" uid="uid://bsec0mo7n11tc" path="res://models/glb files/wall/wall.glb" id="1_g1r61"]
+[ext_resource type="Shader" path="res://shaders/psx.gdshader" id="2_skm5y"]
+[ext_resource type="Texture2D" uid="uid://pdrg52jfuudu" path="res://models/glb files/wall/wall_concrete rough.png" id="3_322mq"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gesq5"]
+render_priority = 0
+shader = ExtResource("2_skm5y")
+shader_parameter/point_size = null
+shader_parameter/roughness = null
+shader_parameter/metallic_texture_channel = null
+shader_parameter/specular = null
+shader_parameter/metallic = null
+shader_parameter/emission = null
+shader_parameter/emission_energy = null
+shader_parameter/uv1_scale = null
+shader_parameter/uv1_offset = null
+shader_parameter/uv2_scale = null
+shader_parameter/uv2_offset = null
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/resolution = Vector2i(320, 240)
+shader_parameter/affine_mapping = false
+shader_parameter/alpha_scissor = 0.5
+shader_parameter/jitter = 0.15
+shader_parameter/texture_albedo = ExtResource("3_322mq")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_cd3vv"]
+size = Vector3(6.78246, 7.21265, 0.925232)
+
+[node name="wall" instance=ExtResource("1_g1r61")]
+
+[node name="Cube_001" parent="." index="0"]
+transform = Transform3D(3.38024, 0, 0, 0, 3.47203, 0, 0, 0, 0.444806, 0, 3.459, 0)
+surface_material_override/0 = SubResource("ShaderMaterial_gesq5")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.34, 0)
+shape = SubResource("BoxShape3D_cd3vv")

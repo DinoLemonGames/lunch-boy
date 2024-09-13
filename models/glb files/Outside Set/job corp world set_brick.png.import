@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bxthoomql4xvc"
-path.s3tc="res://.godot/imported/job corp world set_asphalt line.png-5145d4911178f57a1fe75a291d2bafb8.s3tc.ctex"
+uid="uid://bjaknk16ofte4"
+path.s3tc="res://.godot/imported/job corp world set_brick.png-931770a0e3ae8fb1bdc10c15118a5849.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "63927bd8adeb136dc67dbdefc015a4b3"
+"md5": "14561187881ed5ff20a0d036987f009b"
 }
 
 [deps]
 
-source_file="res://models/glb files/job corp world set_asphalt line.png"
-dest_files=["res://.godot/imported/job corp world set_asphalt line.png-5145d4911178f57a1fe75a291d2bafb8.s3tc.ctex"]
+source_file="res://models/glb files/Outside Set/job corp world set_brick.png"
+dest_files=["res://.godot/imported/job corp world set_brick.png-931770a0e3ae8fb1bdc10c15118a5849.s3tc.ctex"]
 
 [params]
 

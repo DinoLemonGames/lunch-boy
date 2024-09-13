@@ -2,24 +2,23 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dyrru15ydgg6t"
-path.s3tc="res://.godot/imported/job corp world set_concrete smooth.png-1346ae7e4511697b5eb406920e8d994c.s3tc.ctex"
+uid="uid://cwdhssf3avaqs"
+path="res://.godot/imported/fence_metal rusted fence.png-aafaee4732ee4d45156440dab0cc5471.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 generator_parameters={
-"md5": "1aca286af2d84c3f9ece457542e38f45"
+"md5": "88357e9079cb504b700275b50b09531b"
 }
 
 [deps]
 
-source_file="res://models/glb files/job corp world set_concrete smooth.png"
-dest_files=["res://.godot/imported/job corp world set_concrete smooth.png-1346ae7e4511697b5eb406920e8d994c.s3tc.ctex"]
+source_file="res://models/glb files/fence/fence_metal rusted fence.png"
+dest_files=["res://.godot/imported/fence_metal rusted fence.png-aafaee4732ee4d45156440dab0cc5471.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

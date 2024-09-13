@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://scripts/world_environment.gd" id="3_vhh12"]
 [ext_resource type="PackedScene" uid="uid://6gs11pnmf4lk" path="res://scenes/player.tscn" id="4_nwiyy"]
 [ext_resource type="PackedScene" uid="uid://7fuqq881o5ej" path="res://models/glb files/car test.glb" id="5_rrhsr"]
-[ext_resource type="PackedScene" uid="uid://04f264xwrjls" path="res://models/glb files/job corp world set.glb" id="6_65oys"]
+[ext_resource type="PackedScene" uid="uid://04f264xwrjls" path="res://models/glb files/Outside Set/job corp world set.glb" id="6_65oys"]
 [ext_resource type="PackedScene" uid="uid://dlb2myj4qd3ad" path="res://scenes/props/job_corp_sign.tscn" id="6_i31jc"]
 [ext_resource type="PackedScene" uid="uid://detie63k58y36" path="res://scenes/props/lightpost.tscn" id="8_4rety"]
 [ext_resource type="AudioStream" uid="uid://bpo5r856iceay" path="res://sounds/buzz.wav" id="8_elr3e"]

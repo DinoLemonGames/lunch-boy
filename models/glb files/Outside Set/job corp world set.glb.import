@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://ctsr77kvomjeg"
-path="res://.godot/imported/warehouse_racks.glb-49c4a1cc683ba8c78084b547b919048d.scn"
+uid="uid://04f264xwrjls"
+path="res://.godot/imported/job corp world set.glb-dbfb1871897ec5a76b1c31ad474f95b6.scn"
 
 [deps]
 
-source_file="res://models/glb files/warehouse_racks.glb"
-dest_files=["res://.godot/imported/warehouse_racks.glb-49c4a1cc683ba8c78084b547b919048d.scn"]
+source_file="res://models/glb files/Outside Set/job corp world set.glb"
+dest_files=["res://.godot/imported/job corp world set.glb-dbfb1871897ec5a76b1c31ad474f95b6.scn"]
 
 [params]
 

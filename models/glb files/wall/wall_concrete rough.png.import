@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cqvkw4k8monvl"
-path.s3tc="res://.godot/imported/job corp world set_gravel 1.png-727740b259d352d8106fe0f788351f63.s3tc.ctex"
+uid="uid://pdrg52jfuudu"
+path.s3tc="res://.godot/imported/wall_concrete rough.png-29d1df715036485b157674de45730544.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "3b51054b05e057f3a3cc6fa51e41d255"
+"md5": "f5dfc37c1d3edf2267cf8d997379dd34"
 }
 
 [deps]
 
-source_file="res://models/glb files/job corp world set_gravel 1.png"
-dest_files=["res://.godot/imported/job corp world set_gravel 1.png-727740b259d352d8106fe0f788351f63.s3tc.ctex"]
+source_file="res://models/glb files/wall/wall_concrete rough.png"
+dest_files=["res://.godot/imported/wall_concrete rough.png-29d1df715036485b157674de45730544.s3tc.ctex"]
 
 [params]
 

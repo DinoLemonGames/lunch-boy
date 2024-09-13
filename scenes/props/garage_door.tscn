@@ -1,0 +1,85 @@
+[gd_scene load_steps=7 format=3 uid="uid://qib5fndvo3ml"]
+
+[ext_resource type="Shader" path="res://shaders/psx.gdshader" id="1_ligr8"]
+[ext_resource type="Script" path="res://scenes/props/garage_door.gd" id="1_m2web"]
+[ext_resource type="Texture2D" uid="uid://hjrp3qmrdyh8" path="res://textures/garage_door.png" id="2_m7ffw"]
+
+[sub_resource type="Curve3D" id="Curve3D_puyyw"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.016, 4.245, 0.018, 0, 0, 0.948, 0, 0, 0, 0, 5, -0.696, 0, 0, 0, 0, 0, 0, -0.008, 5, -3.912),
+"tilts": PackedFloat32Array(0, 0, 0, 0)
+}
+point_count = 4
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2asjb"]
+render_priority = 0
+shader = ExtResource("1_ligr8")
+shader_parameter/point_size = null
+shader_parameter/roughness = null
+shader_parameter/metallic_texture_channel = null
+shader_parameter/specular = null
+shader_parameter/metallic = 27.895
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = null
+shader_parameter/uv1_scale = null
+shader_parameter/uv1_offset = null
+shader_parameter/uv2_scale = null
+shader_parameter/uv2_offset = null
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/resolution = Vector2i(320, 240)
+shader_parameter/affine_mapping = false
+shader_parameter/alpha_scissor = 0.5
+shader_parameter/jitter = 0.15
+shader_parameter/texture_metallic = ExtResource("2_m7ffw")
+shader_parameter/texture_albedo = ExtResource("2_m7ffw")
+
+[sub_resource type="BoxMesh" id="BoxMesh_o2j0p"]
+material = SubResource("ShaderMaterial_2asjb")
+size = Vector3(1.2, 5.635, 0.155)
+
+[node name="GarageDoor" type="Node3D"]
+script = ExtResource("1_m2web")
+
+[node name="Path3D" type="Path3D" parent="."]
+curve = SubResource("Curve3D_puyyw")
+
+[node name="Follow1" type="PathFollow3D" parent="Path3D"]
+transform = Transform3D(1.49007e-07, 0.99995, -0.00376901, 0.00424025, -0.00376892, -0.999956, -0.999962, -1.58542e-05, -0.00424023, 0, 0, 0)
+
+[node name="DoorSection" type="MeshInstance3D" parent="Path3D/Follow1"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+mesh = SubResource("BoxMesh_o2j0p")
+
+[node name="Follow2" type="PathFollow3D" parent="Path3D"]
+transform = Transform3D(1.4901e-07, 0.99999, -0.00376911, 0.00424033, -0.00376907, -0.999984, -0.999981, -1.58548e-05, -0.00424035, 0.00454899, 1.2069, 0.00511761)
+progress = 1.20763
+
+[node name="DoorSection2" type="MeshInstance3D" parent="Path3D/Follow2"]
+transform = Transform3D(-4.37106e-08, 3.55271e-15, 0.999981, 8.74749e-15, 0.999961, -7.10543e-15, -0.999972, 3.55271e-15, -4.37102e-08, 0, 0, 0)
+mesh = SubResource("BoxMesh_o2j0p")
+skeleton = NodePath("")
+
+[node name="Follow3" type="PathFollow3D" parent="Path3D"]
+transform = Transform3D(1.4901e-07, 0.99999, -0.00376911, 0.00424033, -0.00376907, -0.999984, -0.99998, -1.58548e-05, -0.00424034, 0.0091044, 2.41551, 0.0102425)
+progress = 2.41526
+
+[node name="DoorSection3" type="MeshInstance3D" parent="Path3D/Follow3"]
+transform = Transform3D(-4.37106e-08, 3.55271e-15, 0.999981, 8.74749e-15, 0.999961, -7.10543e-15, -0.999972, 3.55271e-15, -4.37102e-08, 0, 0, 0)
+mesh = SubResource("BoxMesh_o2j0p")
+skeleton = NodePath("")
+
+[node name="Follow4" type="PathFollow3D" parent="Path3D"]
+transform = Transform3D(-8.94064e-08, 0.999993, -0.00376208, 0.00423239, -0.00376207, -0.99998, -0.999985, -1.60038e-05, -0.00423236, 0.01366, 3.62416, 0.0153675)
+progress = 3.6229
+
+[node name="DoorSection4" type="MeshInstance3D" parent="Path3D/Follow4"]
+transform = Transform3D(-4.37106e-08, 3.55271e-15, 0.999981, 8.74749e-15, 0.999961, -7.10543e-15, -0.999972, 3.55271e-15, -4.37102e-08, 0, 0, 0)
+mesh = SubResource("BoxMesh_o2j0p")
+skeleton = NodePath("")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.576361, 0.292857, -0.762917, 1.62315e-08, 0.93358, 0.358368, 0.817195, -0.20655, 0.538079, -9.03769, 5.88389, 5.83033)
+fov = 55.7
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.986638, 0.0204826, 0.161637, -0.16293, 0.124034, 0.97881, 0, -0.992067, 0.125714, 0, 7.42571, 0)

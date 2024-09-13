@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://bktcoa28q5ae6"]
 
-[ext_resource type="PackedScene" uid="uid://ctsr77kvomjeg" path="res://models/glb files/warehouse_racks.glb" id="1_4ofht"]
+[ext_resource type="PackedScene" uid="uid://ctsr77kvomjeg" path="res://models/glb files/Racks/warehouse_racks.glb" id="1_4ofht"]
 [ext_resource type="Shader" path="res://shaders/psx.gdshader" id="2_wyeyq"]
 [ext_resource type="Texture2D" uid="uid://c56d47br7xvhk" path="res://textures/warehouse_racks_Blue Rusted Paint.png" id="3_okmsn"]
 [ext_resource type="Material" uid="uid://b1bspucnp0yqy" path="res://materials/yellow_rusted_metal.tres" id="4_b0q3d"]

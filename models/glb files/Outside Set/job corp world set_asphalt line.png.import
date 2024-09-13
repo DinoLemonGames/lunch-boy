@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d0d70q1bw723n"
-path.s3tc="res://.godot/imported/warehouse_racks_Blue Rusted Paint.png-1e88c513b2d0b2a7ab1091dbfef5ce9d.s3tc.ctex"
+uid="uid://bxthoomql4xvc"
+path.s3tc="res://.godot/imported/job corp world set_asphalt line.png-15ddf37ae55b4f4cf63c29d5b7af24f3.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "125b15ce9ff5d013decf9a41db487d3b"
+"md5": "63927bd8adeb136dc67dbdefc015a4b3"
 }
 
 [deps]
 
-source_file="res://models/glb files/warehouse_racks_Blue Rusted Paint.png"
-dest_files=["res://.godot/imported/warehouse_racks_Blue Rusted Paint.png-1e88c513b2d0b2a7ab1091dbfef5ce9d.s3tc.ctex"]
+source_file="res://models/glb files/Outside Set/job corp world set_asphalt line.png"
+dest_files=["res://.godot/imported/job corp world set_asphalt line.png-15ddf37ae55b4f4cf63c29d5b7af24f3.s3tc.ctex"]
 
 [params]
 

@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://04f264xwrjls"
-path="res://.godot/imported/job corp world set.glb-b654e67d25cf4c870d692caad80c3a2c.scn"
+uid="uid://bwinrmcw13wt"
+path="res://.godot/imported/fence.glb-065ab82fc9566d30865c3f32f55b5d1b.scn"
 
 [deps]
 
-source_file="res://models/glb files/job corp world set.glb"
-dest_files=["res://.godot/imported/job corp world set.glb-b654e67d25cf4c870d692caad80c3a2c.scn"]
+source_file="res://models/glb files/fence/fence.glb"
+dest_files=["res://.godot/imported/fence.glb-065ab82fc9566d30865c3f32f55b5d1b.scn"]
 
 [params]
 

@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://doxd2plnjapru"
-path.s3tc="res://.godot/imported/job corp world set_metal smooth.png-05170fb8b93881847f7ad24e8ae28e75.s3tc.ctex"
+path.s3tc="res://.godot/imported/job corp world set_metal smooth.png-91c9e8aad9a6c95f1f7805f3d6a71013.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://models/glb files/job corp world set_metal smooth.png"
-dest_files=["res://.godot/imported/job corp world set_metal smooth.png-05170fb8b93881847f7ad24e8ae28e75.s3tc.ctex"]
+source_file="res://models/glb files/Outside Set/job corp world set_metal smooth.png"
+dest_files=["res://.godot/imported/job corp world set_metal smooth.png-91c9e8aad9a6c95f1f7805f3d6a71013.s3tc.ctex"]
 
 [params]
 

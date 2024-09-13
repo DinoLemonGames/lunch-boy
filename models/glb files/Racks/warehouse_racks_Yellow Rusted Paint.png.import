@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dcfuf46h8gtgl"
-path.s3tc="res://.godot/imported/job corp world set_grate.png-99ea7cc1729d7372861de606a866ef18.s3tc.ctex"
+uid="uid://dypcxl8unvnfb"
+path.s3tc="res://.godot/imported/warehouse_racks_Yellow Rusted Paint.png-1084cb3471fe65f44b0263d5bfeaa227.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "1f0c61b83ad875ab059fbc3f9a591b94"
+"md5": "a19639b277a296e88a01040dc6357802"
 }
 
 [deps]
 
-source_file="res://models/glb files/job corp world set_grate.png"
-dest_files=["res://.godot/imported/job corp world set_grate.png-99ea7cc1729d7372861de606a866ef18.s3tc.ctex"]
+source_file="res://models/glb files/Racks/warehouse_racks_Yellow Rusted Paint.png"
+dest_files=["res://.godot/imported/warehouse_racks_Yellow Rusted Paint.png-1084cb3471fe65f44b0263d5bfeaa227.s3tc.ctex"]
 
 [params]
 

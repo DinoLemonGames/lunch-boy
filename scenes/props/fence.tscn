@@ -1,0 +1,154 @@
+[gd_scene load_steps=13 format=3 uid="uid://ceo3bgyb3rf1p"]
+
+[ext_resource type="PackedScene" uid="uid://bwinrmcw13wt" path="res://models/glb files/fence/fence.glb" id="1_qjqf6"]
+[ext_resource type="Shader" path="res://shaders/psx.gdshader" id="2_jeobk"]
+[ext_resource type="Texture2D" uid="uid://cwdhssf3avaqs" path="res://models/glb files/fence/fence_metal rusted fence.png" id="3_7xx0e"]
+[ext_resource type="Texture2D" uid="uid://db1url2y4bkhi" path="res://models/glb files/fence/fence_metal rusty.png" id="4_wogmp"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bsws8"]
+render_priority = 0
+shader = ExtResource("2_jeobk")
+shader_parameter/point_size = null
+shader_parameter/roughness = null
+shader_parameter/metallic_texture_channel = null
+shader_parameter/specular = null
+shader_parameter/metallic = null
+shader_parameter/emission = null
+shader_parameter/emission_energy = null
+shader_parameter/uv1_scale = null
+shader_parameter/uv1_offset = null
+shader_parameter/uv2_scale = null
+shader_parameter/uv2_offset = null
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/resolution = Vector2i(320, 240)
+shader_parameter/affine_mapping = false
+shader_parameter/alpha_scissor = 0.5
+shader_parameter/jitter = 0.15
+shader_parameter/texture_albedo = ExtResource("3_7xx0e")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8jeh7"]
+resource_name = "Material"
+cull_mode = 2
+albedo_texture = ExtResource("3_7xx0e")
+texture_filter = 2
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_fcs76"]
+_surfaces = [{
+"aabb": AABB(-1, 0, -1, 2, 1e-05, 2),
+"format": 34896613377,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 3, 0, 1, 0, 0, 0, 2, 0, 3, 0),
+"name": "Material",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 255, 255, 0, 0, 255, 255, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 0, 0, 0, 0, 0, 0)
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_btesl"]
+resource_name = "fence_Plane"
+_surfaces = [{
+"aabb": AABB(-1, 0, -1, 2, 1e-05, 2),
+"attribute_data": PackedByteArray(190, 53, 255, 255, 255, 255, 255, 255, 190, 53, 190, 53, 255, 255, 190, 53),
+"format": 34896613399,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 3, 0, 1, 0, 0, 0, 2, 0, 3, 0),
+"material": SubResource("StandardMaterial3D_8jeh7"),
+"name": "Material",
+"primitive": 3,
+"uv_scale": Vector4(4.76327, 4.76327, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 255, 255, 255, 191, 255, 255, 0, 0, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 255, 191, 255, 255, 0, 0, 0, 0, 255, 191, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127, 255, 255, 255, 127)
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_fcs76")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1fegh"]
+render_priority = 0
+shader = ExtResource("2_jeobk")
+shader_parameter/point_size = null
+shader_parameter/roughness = null
+shader_parameter/metallic_texture_channel = null
+shader_parameter/specular = null
+shader_parameter/metallic = null
+shader_parameter/emission = null
+shader_parameter/emission_energy = null
+shader_parameter/uv1_scale = null
+shader_parameter/uv1_offset = null
+shader_parameter/uv2_scale = null
+shader_parameter/uv2_offset = null
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/resolution = Vector2i(320, 240)
+shader_parameter/affine_mapping = false
+shader_parameter/alpha_scissor = 0.5
+shader_parameter/jitter = 0.15
+shader_parameter/texture_albedo = ExtResource("3_7xx0e")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uhu7a"]
+render_priority = 0
+shader = ExtResource("2_jeobk")
+shader_parameter/point_size = null
+shader_parameter/roughness = null
+shader_parameter/metallic_texture_channel = null
+shader_parameter/specular = null
+shader_parameter/metallic = null
+shader_parameter/emission = null
+shader_parameter/emission_energy = null
+shader_parameter/uv1_scale = null
+shader_parameter/uv1_offset = null
+shader_parameter/uv2_scale = null
+shader_parameter/uv2_offset = null
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/resolution = Vector2i(320, 240)
+shader_parameter/affine_mapping = false
+shader_parameter/alpha_scissor = 0.5
+shader_parameter/jitter = 0.15
+shader_parameter/texture_albedo = ExtResource("4_wogmp")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mqhfh"]
+render_priority = 0
+shader = ExtResource("2_jeobk")
+shader_parameter/point_size = null
+shader_parameter/roughness = null
+shader_parameter/metallic_texture_channel = null
+shader_parameter/specular = null
+shader_parameter/metallic = null
+shader_parameter/emission = null
+shader_parameter/emission_energy = null
+shader_parameter/uv1_scale = null
+shader_parameter/uv1_offset = null
+shader_parameter/uv2_scale = null
+shader_parameter/uv2_offset = null
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/resolution = Vector2i(320, 240)
+shader_parameter/affine_mapping = false
+shader_parameter/alpha_scissor = 0.5
+shader_parameter/jitter = 0.15
+shader_parameter/texture_albedo = ExtResource("4_wogmp")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qd7fw"]
+size = Vector3(5.705, 5.00281, 0.326111)
+
+[node name="fence" instance=ExtResource("1_qjqf6")]
+
+[node name="Plane" parent="." index="0"]
+surface_material_override/0 = SubResource("ShaderMaterial_bsws8")
+
+[node name="Plane2" type="MeshInstance3D" parent="." index="1"]
+transform = Transform3D(-2.68869, -1.98511e-07, 0, 0, 0, -2.22613, 2.35053e-07, -2.2707, 0, 0.0101822, 2.35503, 0.00112259)
+mesh = SubResource("ArrayMesh_btesl")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("ShaderMaterial_1fegh")
+
+[node name="Cylinder" parent="." index="2"]
+surface_material_override/0 = SubResource("ShaderMaterial_uhu7a")
+
+[node name="Cylinder_001" parent="." index="3"]
+surface_material_override/0 = SubResource("ShaderMaterial_mqhfh")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.35248, -0.0108337)
+shape = SubResource("BoxShape3D_qd7fw")
