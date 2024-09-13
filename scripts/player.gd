@@ -3,7 +3,7 @@ extends CharacterBody3D
 var speed
 const WALK_SPEED = 4.0
 const SPRINT_SPEED = 6.0
-const JUMP_VELOCITY = 4.5
+const JUMP_VELOCITY = 5.5
 
 var sensitivity = 0.003
 
@@ -28,7 +28,7 @@ const FOV_CHANGE = 1.5
 
 # Pickup variables
 var picked_object
-var pull_power = 3
+var pull_power = 5
 var rotation_power = 0.2
 var locked = false
 var throw_power = 4
@@ -121,9 +121,10 @@ func _physics_process(delta):
 	camera.transform.origin = _headbob(t_bob)
 	
 	# FOV
-	var velocity_clamped = clamp(velocity.length(), 0.5, SPRINT_SPEED * 2)
-	var target_fov = BASE_FOV + FOV_CHANGE * velocity_clamped
-	camera.fov = lerp(camera.fov, target_fov, delta * 8.0)
+	if is_on_floor():
+		var velocity_clamped = clamp(velocity.length(), 0.5, SPRINT_SPEED * 2)
+		var target_fov = BASE_FOV + FOV_CHANGE * velocity_clamped
+		camera.fov = lerp(camera.fov, target_fov, delta * 8.0)
 	
 	move_and_slide()
 	
