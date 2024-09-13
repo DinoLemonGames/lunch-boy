@@ -29,14 +29,19 @@ shape = SubResource("CylinderShape3D_mmgcw")
 wait_time = 5.0
 one_shot = true
 
+[node name="ObjectLightOffTimer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
 [node name="LightOn" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("2_g8c3y")
-volume_db = 4.0
+volume_db = 2.0
 
 [node name="LightOff" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("3_tqpew")
-volume_db = 8.0
+volume_db = 5.0
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
 [connection signal="timeout" from="LightOffTimer" to="." method="_on_light_off_timer_timeout"]
+[connection signal="timeout" from="ObjectLightOffTimer" to="." method="_on_object_light_off_timer_timeout"]
