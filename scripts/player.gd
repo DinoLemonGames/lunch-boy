@@ -121,4 +121,5 @@ func _headbob(time) -> Vector3:
 	return pos
 
 func _on_doorway_body_entered(body):
-	get_tree().call_deferred("change_scene_to_file", "res://scenes/job_corp_warehouse.tscn")
+	if body.is_in_group("player"):
+		get_tree().call_deferred("change_scene_to_file", "res://scenes/job_corp_warehouse.tscn")

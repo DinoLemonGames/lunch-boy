@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://cqxk8xg6ijtfk"]
+[gd_scene load_steps=24 format=3 uid="uid://cqxk8xg6ijtfk"]
 
 [ext_resource type="Shader" path="res://shaders/ps1_post_processing.gdshader" id="1_6ry8a"]
 [ext_resource type="Script" path="res://scripts/sub_viewport_container.gd" id="2_wjvoy"]
@@ -13,7 +13,7 @@
 [ext_resource type="AudioStream" uid="uid://dx8kqdc5jsalv" path="res://sounds/buzz_deep.wav" id="9_304gr"]
 [ext_resource type="PackedScene" uid="uid://dgfegdl4x0gxs" path="res://scenes/props/trees/tree normal.tscn" id="10_gnru7"]
 [ext_resource type="PackedScene" uid="uid://d2h2l3cca4n3y" path="res://scenes/props/trees/tree straight.tscn" id="11_4vnst"]
-[ext_resource type="AudioStream" uid="uid://clptaoyavic81" path="res://sounds/mainmenu_ambiance.wav" id="12_cd758"]
+[ext_resource type="AudioStream" uid="uid://clptaoyavic81" path="res://sounds/menu/mainmenu_ambiance.wav" id="12_cd758"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0u6t1"]
 shader = ExtResource("1_6ry8a")
@@ -74,6 +74,8 @@ clearcoat = 0.0
 
 [sub_resource type="BoxMesh" id="BoxMesh_6ydcd"]
 material = SubResource("StandardMaterial3D_n85gv")
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_1e76q"]
 
 [node name="JobCorpOutside" type="SubViewportContainer"]
 material = SubResource("ShaderMaterial_0u6t1")
@@ -188,5 +190,19 @@ stream = ExtResource("8_elr3e")
 unit_size = 1.0
 autoplay = true
 panning_strength = 0.0
+
+[node name="WorldBorderLeft" type="StaticBody3D" parent="SubViewport/JobCorpWarehouse"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.5979, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewport/JobCorpWarehouse/WorldBorderLeft"]
+transform = Transform3D(4.37114e-08, 1, -8.74228e-08, 1, -4.37114e-08, 0, -3.82137e-15, -8.74228e-08, -1, -0.803028, 3.84985, -16.3382)
+shape = SubResource("WorldBoundaryShape3D_1e76q")
+
+[node name="WorldBorderRight" type="StaticBody3D" parent="SubViewport/JobCorpWarehouse"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.5979, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewport/JobCorpWarehouse/WorldBorderRight"]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 69.6611, 3.84985, -16.3382)
+shape = SubResource("WorldBoundaryShape3D_1e76q")
 
 [connection signal="body_entered" from="SubViewport/JobCorpWarehouse/Doorway" to="SubViewport/JobCorpWarehouse/Player" method="_on_doorway_body_entered"]

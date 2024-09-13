@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://dgwbdh7pm6xrj"]
+
+[ext_resource type="Script" path="res://scripts/warehouse_light.gd" id="1_aswyv"]
+[ext_resource type="AudioStream" uid="uid://boes8yv1bk70t" path="res://sounds/lights/warehouse_light_turnon.wav" id="2_g8c3y"]
+[ext_resource type="AudioStream" uid="uid://dbp5iyjiqstvc" path="res://sounds/lights/warehouse_light_turnoff.wav" id="3_tqpew"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_mmgcw"]
+height = 44.0
+radius = 16.7004
+
+[node name="WarehouseLight" type="SpotLight3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
+light_color = Color(1, 0.934949, 0.879978, 1)
+light_energy = 16.0
+light_indirect_energy = 16.0
+spot_range = 30.0
+spot_attenuation = 0.68
+spot_angle = 42.07
+spot_angle_attenuation = 2.37841
+script = ExtResource("1_aswyv")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 7.86805e-07, -18)
+shape = SubResource("CylinderShape3D_mmgcw")
+
+[node name="LightOffTimer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+
+[node name="LightOn" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_g8c3y")
+volume_db = 4.0
+
+[node name="LightOff" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_tqpew")
+volume_db = 8.0
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
+[connection signal="timeout" from="LightOffTimer" to="." method="_on_light_off_timer_timeout"]

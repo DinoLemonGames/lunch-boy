@@ -14,10 +14,10 @@
 [ext_resource type="FontFile" uid="uid://cvtvb4r52pd1o" path="res://fonts/Montserrat-Regular.ttf" id="12_35688"]
 [ext_resource type="Script" path="res://scripts/menu_camera.gd" id="12_mcaxc"]
 [ext_resource type="Script" path="res://scripts/menu.gd" id="12_qno6c"]
-[ext_resource type="AudioStream" uid="uid://bykrmymgcrj4q" path="res://sounds/button_hover.ogg" id="15_qmxj0"]
-[ext_resource type="AudioStream" uid="uid://qppphxgyvlh4" path="res://sounds/play_button_select.ogg" id="16_uiprr"]
-[ext_resource type="AudioStream" uid="uid://clptaoyavic81" path="res://sounds/mainmenu_ambiance.wav" id="17_6hx1c"]
-[ext_resource type="AudioStream" uid="uid://bpa6v73mu8wby" path="res://sounds/main_menu_music.wav" id="18_tw858"]
+[ext_resource type="AudioStream" uid="uid://bykrmymgcrj4q" path="res://sounds/menu/button_hover.ogg" id="15_qmxj0"]
+[ext_resource type="AudioStream" uid="uid://qppphxgyvlh4" path="res://sounds/menu/play_button_select.ogg" id="16_uiprr"]
+[ext_resource type="AudioStream" uid="uid://clptaoyavic81" path="res://sounds/menu/mainmenu_ambiance.wav" id="17_6hx1c"]
+[ext_resource type="AudioStream" uid="uid://bpa6v73mu8wby" path="res://sounds/music/main_menu_music.wav" id="18_tw858"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0u6t1"]
 shader = ExtResource("1_01qfx")
@@ -195,7 +195,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.7439, 0.185944, -18.4054)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.6711, 0.00432301, -18.1929)
 
 [node name="Camera3D" type="Camera3D" parent="SubViewport/JobCorpWarehouse"]
-transform = Transform3D(0.921388, -0.152982, 0.357268, 0.0416005, 0.952809, 0.300706, -0.386411, -0.262205, 0.884271, 2.73428, 2.7522, -4.31518)
+transform = Transform3D(0.921388, -0.152982, 0.357268, 0.0416005, 0.952809, 0.300706, -0.386411, -0.262204, 0.884271, 2.73428, 2.7522, -4.31518)
 fov = 68.0
 script = ExtResource("12_mcaxc")
 
@@ -216,7 +216,7 @@ script = ExtResource("12_qno6c")
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(1, 0.366457, 0.31173, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 0.784314)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 22
 theme_override_fonts/font = ExtResource("12_35688")
 theme_override_font_sizes/font_size = 41
@@ -230,7 +230,7 @@ alignment = 2
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(1, 0.366457, 0.31173, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 0.784314)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 22
 theme_override_fonts/font = ExtResource("12_35688")
 theme_override_font_sizes/font_size = 41
@@ -243,7 +243,7 @@ alignment = 2
 layout_mode = 2
 theme_override_colors/font_hover_color = Color(1, 0.366457, 0.31173, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 0.784314)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 22
 theme_override_fonts/font = ExtResource("12_35688")
 theme_override_font_sizes/font_size = 41
