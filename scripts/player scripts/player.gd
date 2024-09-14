@@ -66,9 +66,6 @@ func _unhandled_input(event):
 		elif picked_object != null:
 			drop_object()
 	
-	if Input.is_action_just_pressed("interact"):
-		interact()
-	
 	if Input.is_action_pressed("rclick"):
 		if picked_object != null:
 			locked = true
@@ -187,16 +184,6 @@ func rotate_object(event):
 		if event is InputEventMouseMotion:
 			staticbody.rotate_x(deg_to_rad(event.relative.y * rotation_power))
 			staticbody.rotate_y(deg_to_rad(event.relative.x * rotation_power))
-
-func interact():
-	if interaction.get_collider() != null:
-		interact_object = interaction.get_collider()
-		if interact_object.is_in_group("push_button"):
-			print(interact_object)
-		
-		
-	
-
 
 
 
