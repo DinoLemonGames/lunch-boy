@@ -21,17 +21,9 @@ const FOV_CHANGE = 1.5
 
 @onready var head = $Head
 @onready var camera = $Head/Camera3D
-@onready var interaction = $Head/Camera3D/Interaction
-@onready var hand = $Head/Camera3D/Hand
-@onready var joint = $Head/Camera3D/Generic6DOFJoint3D
-@onready var staticbody = $Head/Camera3D/StaticBody3D
 
-# Pickup variables
-var picked_object
-var pull_power = 5
-var rotation_power = 0.2
+# View locked?
 var locked = false
-var throw_power = 4
 
 # Interact variables
 var interact_object
@@ -39,10 +31,10 @@ var interact_object
 # Audio
 @onready var sn_walking = $AudioWalking
 @onready var sn_walking_pants = $AudioWalkingPants
+@onready var sn_running = $AudioRunning
 var played_pants = false
 var played_walking = false
 var landed = false
-@onready var sn_running = $AudioRunning
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -59,26 +51,6 @@ func _unhandled_input(event):
 			head.rotate_y(-event.relative.x * sensitivity)
 			camera.rotate_x(-event.relative.y * sensitivity)
 			camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-60), deg_to_rad(60))
-	
-	if Input.is_action_just_pressed("lclick"):
-		if picked_object == null:
-			pick_object()
-		elif picked_object != null:
-			drop_object()
-	
-	if Input.is_action_pressed("rclick"):
-		if picked_object != null:
-			locked = true
-			rotate_object(event)
-	if Input.is_action_just_released("rclick"):
-		locked = false
-	
-	if Input.is_action_just_pressed("throw"):
-		if picked_object != null:
-			locked = false
-			var knockback = picked_object.global_position - global_position
-			picked_object.apply_central_impulse(knockback * throw_power)
-			drop_object()
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -130,12 +102,6 @@ func _physics_process(delta):
 		camera.fov = lerp(camera.fov, target_fov, delta * 8.0)
 	
 	move_and_slide()
-	
-	# Move the picked object
-	if picked_object != null:
-		var object_origin = picked_object.global_transform.origin
-		var hand_origin = hand.global_transform.origin
-		picked_object.set_linear_velocity((hand_origin - object_origin) * pull_power)
 
 func _headbob(time) -> Vector3:
 	var pos = Vector3.ZERO
@@ -166,41 +132,5 @@ func _on_doorway_body_entered(body):
 	if body.is_in_group("player"):
 		get_tree().call_deferred("change_scene_to_file", "res://scenes/job_corp_warehouse.tscn")
 
-func pick_object():
-	# Check to see if raycast is colliding
-	var collider = interaction.get_collider()
-	# If it's colliding with a rigidbody
-	if collider != null and collider is RigidBody3D:
-		picked_object = collider
-		joint.set_node_b(picked_object.get_path())
-
-func drop_object():
-	if picked_object != null:
-		picked_object = null
-		joint.set_node_b(joint.get_path())
-
-func rotate_object(event):
-	if picked_object != null:
-		if event is InputEventMouseMotion:
-			staticbody.rotate_x(deg_to_rad(event.relative.y * rotation_power))
-			staticbody.rotate_y(deg_to_rad(event.relative.x * rotation_power))
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	
+func _on_view_lock_change(_locked):
+	locked = _locked

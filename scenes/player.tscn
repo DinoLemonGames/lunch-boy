@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://6gs11pnmf4lk"]
+[gd_scene load_steps=33 format=3 uid="uid://6gs11pnmf4lk"]
 
 [ext_resource type="Script" path="res://scripts/player scripts/player.gd" id="1_5x1vc"]
 [ext_resource type="Texture2D" uid="uid://bwtio045on6fx" path="res://textures/GUI/crosshair.png" id="2_qn0gp"]
@@ -15,8 +15,9 @@
 [ext_resource type="AudioStream" uid="uid://tqhvcpbtd2xk" path="res://sounds/walking/boots_walking_5.wav" id="7_o15ub"]
 [ext_resource type="AudioStream" uid="uid://3df0p8t4duqj" path="res://sounds/walking/pants/pants_walking_1.wav" id="8_7yvro"]
 [ext_resource type="AudioStream" uid="uid://bq16wkblmvj68" path="res://sounds/walking/pants/pants_walking_2.wav" id="9_hi4ue"]
-[ext_resource type="Script" path="res://scripts/player scripts/interact_ray.gd" id="9_xoveh"]
+[ext_resource type="Script" path="res://scripts/player scripts/pickup_ray.gd" id="9_xoveh"]
 [ext_resource type="AudioStream" uid="uid://b3ghibygmyw8j" path="res://sounds/walking/pants/pants_walking_3.wav" id="10_624mg"]
+[ext_resource type="Script" path="res://scripts/player scripts/interact_ray.gd" id="10_g77h7"]
 [ext_resource type="AudioStream" uid="uid://b2khvoslvfyfr" path="res://sounds/walking/pants/pants_walking_4.wav" id="11_0yy62"]
 [ext_resource type="AudioStream" uid="uid://cyr50mxdy1tgs" path="res://sounds/walking/pants/pants_walking_5.wav" id="12_itxmj"]
 [ext_resource type="AudioStream" uid="uid://iy8jmc183j5u" path="res://sounds/running/boots_pants_running_1.wav" id="13_kep5q"]
@@ -160,9 +161,31 @@ vertical_alignment = 1
 
 [node name="SecTimer" type="Timer" parent="Head/Camera3D/Watch"]
 
-[node name="Interaction" type="RayCast3D" parent="Head/Camera3D"]
+[node name="PickupRay" type="RayCast3D" parent="Head/Camera3D"]
 target_position = Vector3(0, 0, -5)
 script = ExtResource("9_xoveh")
+
+[node name="InteractRay" type="RayCast3D" parent="Head/Camera3D"]
+target_position = Vector3(0, 0, -2)
+script = ExtResource("10_g77h7")
+
+[node name="Prompt" type="Label" parent="Head/Camera3D/InteractRay"]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = 16.0
+offset_bottom = 67.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.887382, 0.818885, 0.624152, 1)
+theme_override_colors/font_outline_color = Color(0.105882, 0.129412, 0.0901961, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("6_o42pp")
+theme_override_font_sizes/font_size = 19
+text = "Prompt
+[KEY]"
+horizontal_alignment = 1
 
 [node name="Hand" type="Marker3D" parent="Head/Camera3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.4383)
@@ -192,3 +215,4 @@ pitch_scale = 0.5
 
 [connection signal="timeout" from="Head/Camera3D/Stomach/TummyTimer" to="Head/Camera3D/Stomach" method="_on_tummy_timer_timeout"]
 [connection signal="timeout" from="Head/Camera3D/Watch/SecTimer" to="Head/Camera3D/Watch" method="_on_sec_timer_timeout"]
+[connection signal="view_lock_change" from="Head/Camera3D/PickupRay" to="." method="_on_view_lock_change"]

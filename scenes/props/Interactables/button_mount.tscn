@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://bylec6if4wkjl"]
+
+[ext_resource type="PackedScene" uid="uid://ctq210gqe3npo" path="res://models/glb files/physical_button/push_button.glb" id="1_f10vp"]
+[ext_resource type="Shader" path="res://shaders/psx.gdshader" id="2_ma6sv"]
+[ext_resource type="Texture2D" uid="uid://bmrddcjffuhpg" path="res://models/glb files/physical_button/push_button_rusted metal_long.png" id="3_n8aq5"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_j6j4p"]
+render_priority = 0
+shader = ExtResource("2_ma6sv")
+shader_parameter/point_size = null
+shader_parameter/roughness = null
+shader_parameter/metallic_texture_channel = null
+shader_parameter/specular = null
+shader_parameter/metallic = null
+shader_parameter/emission = null
+shader_parameter/emission_energy = null
+shader_parameter/uv1_scale = null
+shader_parameter/uv1_offset = null
+shader_parameter/uv2_scale = null
+shader_parameter/uv2_offset = null
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/resolution = Vector2i(320, 240)
+shader_parameter/affine_mapping = false
+shader_parameter/alpha_scissor = 0.5
+shader_parameter/jitter = 0.25
+shader_parameter/texture_albedo = ExtResource("3_n8aq5")
+
+[node name="ButtonMount" instance=ExtResource("1_f10vp")]
+
+[node name="Cube_002" parent="." index="0"]
+surface_material_override/0 = SubResource("ShaderMaterial_j6j4p")

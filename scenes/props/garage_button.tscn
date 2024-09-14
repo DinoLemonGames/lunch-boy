@@ -1,0 +1,91 @@
+[gd_scene load_steps=11 format=3 uid="uid://cdxymtojo3akb"]
+
+[ext_resource type="PackedScene" uid="uid://bylec6if4wkjl" path="res://scenes/props/Interactables/button_mount.tscn" id="1_ibksa"]
+[ext_resource type="Script" path="res://scenes/props/garage_button.gd" id="1_jroc7"]
+[ext_resource type="Shader" path="res://shaders/psx.gdshader" id="2_5js18"]
+[ext_resource type="Texture2D" uid="uid://cvfic72q8buj6" path="res://textures/Green button.png" id="3_kgwgr"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dywxc"]
+render_priority = 0
+shader = ExtResource("2_5js18")
+shader_parameter/point_size = null
+shader_parameter/roughness = null
+shader_parameter/metallic_texture_channel = null
+shader_parameter/specular = null
+shader_parameter/metallic = null
+shader_parameter/emission = null
+shader_parameter/emission_energy = null
+shader_parameter/uv1_scale = null
+shader_parameter/uv1_offset = null
+shader_parameter/uv2_scale = null
+shader_parameter/uv2_offset = null
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/resolution = Vector2i(320, 240)
+shader_parameter/affine_mapping = false
+shader_parameter/alpha_scissor = 0.5
+shader_parameter/jitter = 0.25
+shader_parameter/texture_albedo = ExtResource("3_kgwgr")
+
+[sub_resource type="BoxMesh" id="BoxMesh_mgr3c"]
+material = SubResource("ShaderMaterial_dywxc")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_accik"]
+size = Vector3(0.39917, 0.414551, 0.306366)
+
+[sub_resource type="Animation" id="Animation_3hl7i"]
+resource_name = "button_pushed"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.00645268, 0.588731, 0.20568), Vector3(-0.00645268, 0.588731, 0.0150095), Vector3(-0.00645268, 0.588731, 0.20568)]
+}
+
+[sub_resource type="Animation" id="Animation_nfxe2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MeshInstance:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.00645268, 0.588731, 0.20568)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ois63"]
+_data = {
+"RESET": SubResource("Animation_nfxe2"),
+"button_pushed": SubResource("Animation_3hl7i")
+}
+
+[node name="GarageButton" type="StaticBody3D"]
+script = ExtResource("1_jroc7")
+prompt_message = "Open Door"
+
+[node name="ButtonMount" parent="." instance=ExtResource("1_ibksa")]
+
+[node name="MeshInstance" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.325302, 0, 0, 0, 0.331063, 0, 0, 0, 0.237207, -0.00645268, 0.588731, 0.20568)
+mesh = SubResource("BoxMesh_mgr3c")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0087285, 0.579002, 0.20314)
+shape = SubResource("BoxShape3D_accik")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ois63")
+}
+
+[connection signal="interacted" from="." to="." method="_on_interacted"]

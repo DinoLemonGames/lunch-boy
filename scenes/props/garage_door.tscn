@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://qib5fndvo3ml"]
 
 [ext_resource type="Shader" path="res://shaders/psx.gdshader" id="1_ligr8"]
-[ext_resource type="Script" path="res://scenes/props/garage_door.gd" id="1_m2web"]
+[ext_resource type="Script" path="res://scripts/garage_door.gd" id="1_m2web"]
 [ext_resource type="Texture2D" uid="uid://hjrp3qmrdyh8" path="res://textures/garage_door.png" id="2_m7ffw"]
 
 [sub_resource type="Curve3D" id="Curve3D_puyyw"]
@@ -78,7 +78,7 @@ transform = Transform3D(1, 5.83924e-11, 0, -8.56915e-11, 1, 0, 0, 0, 1, 0.002441
 shape = SubResource("BoxShape3D_07tn8")
 
 [node name="Follow3" type="PathFollow3D" parent="Path3D"]
-transform = Transform3D(1.4901e-07, 0.99999, -0.00376911, 0.00424033, -0.00376907, -0.999984, -0.999979, -1.58548e-05, -0.00424035, 0.00910439, 2.41551, 0.0102424)
+transform = Transform3D(1.4901e-07, 0.99999, -0.00376911, 0.00424032, -0.00376907, -0.999984, -0.999979, -1.58548e-05, -0.00424035, 0.00910439, 2.41551, 0.0102424)
 progress = 2.41526
 
 [node name="RigidBody3D" type="StaticBody3D" parent="Path3D/Follow3"]

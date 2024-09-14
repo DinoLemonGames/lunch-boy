@@ -21,6 +21,7 @@ Transition="*res://scenes/transition.tscn"
 
 [display]
 
+window/size/mode=3
 window/stretch/mode="viewport"
 mouse_cursor/custom_image="res://textures/GUI/crosshair.png"
 
@@ -44,7 +45,6 @@ import/blender/enabled=false
 
 player=""
 light_motion=""
-push_button=""
 
 [input]
 

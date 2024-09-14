@@ -20,13 +20,6 @@ enum States {
 
 const SPEED = 0.005
 
-func _input(event):
-	if Input.is_action_just_pressed("debug_1"):
-		if state == States.CLOSED or state == States.CLOSING:
-			state = States.OPENING
-		elif state == States.OPEN or state == States.OPENING:
-			state = States.CLOSING
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	state = States.CLOSED
@@ -51,3 +44,9 @@ func _process(delta):
 		follow4.progress_ratio = lerp(follow4.progress_ratio, follow4_start, SPEED)
 		if follow1.progress_ratio < 0.006:
 			state = States.CLOSED
+
+func _on_garage_button_interacted(body):
+	if state == States.CLOSED or state == States.CLOSING:
+		state = States.OPENING
+	elif state == States.OPEN or state == States.OPENING:
+		state = States.CLOSING
