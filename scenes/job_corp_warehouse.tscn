@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://u2fgvdawyr4s"]
+[gd_scene load_steps=24 format=3 uid="uid://u2fgvdawyr4s"]
 
 [ext_resource type="PackedScene" uid="uid://6gs11pnmf4lk" path="res://scenes/player.tscn" id="1_gf5af"]
 [ext_resource type="Shader" path="res://shaders/ps1_post_processing.gdshader" id="1_yyrm2"]
@@ -11,6 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://bktcoa28q5ae6" path="res://scenes/props/warehouse_racks.tscn" id="7_no8pb"]
 [ext_resource type="PackedScene" uid="uid://ceo3bgyb3rf1p" path="res://scenes/props/fence.tscn" id="9_gqoy7"]
 [ext_resource type="PackedScene" uid="uid://d0punf124xwt6" path="res://scenes/props/wall.tscn" id="10_4rws6"]
+[ext_resource type="PackedScene" uid="uid://qib5fndvo3ml" path="res://scenes/props/garage_door.tscn" id="12_1kblk"]
+[ext_resource type="PackedScene" uid="uid://bylec6if4wkjl" path="res://scenes/props/Interactables/push_button.tscn" id="13_bjlx8"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0u6t1"]
 shader = ExtResource("1_yyrm2")
@@ -29,7 +31,7 @@ sky_material = SubResource("ProceduralSkyMaterial_ih6ya")
 
 [sub_resource type="Environment" id="Environment_5fl0s"]
 background_mode = 2
-background_energy_multiplier = 0.5
+background_energy_multiplier = 0.0
 sky = SubResource("Sky_b8b34")
 ambient_light_sky_contribution = 0.0
 ambient_light_energy = 0.0
@@ -133,14 +135,14 @@ material = SubResource("ShaderMaterial_chl8m")
 
 [node name="JobCorpWarehouse" type="SubViewportContainer"]
 material = SubResource("ShaderMaterial_0u6t1")
-offset_left = 3.0
-offset_right = 515.0
-offset_bottom = 512.0
+offset_right = 1152.0
+offset_bottom = 648.0
 script = ExtResource("2_5uw6h")
 
 [node name="SubViewport" type="SubViewport" parent="."]
 handle_input_locally = false
 scaling_3d_scale = 0.5
+audio_listener_enable_2d = true
 audio_listener_enable_3d = true
 size = Vector2i(1152, 648)
 render_target_update_mode = 4
@@ -151,13 +153,13 @@ render_target_update_mode = 4
 environment = SubResource("Environment_5fl0s")
 script = ExtResource("3_hv00i")
 
+[node name="Player" parent="SubViewport/JobCorpWarehouse" groups=["player"] instance=ExtResource("1_gf5af")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0498068, 1.19957, 38.1853)
+
 [node name="FloorCSG" type="CSGBox3D" parent="SubViewport/JobCorpWarehouse"]
 transform = Transform3D(100, 0, 0, 0, 0.034, 0, 0, 0, 80, 0, 0, 0)
 use_collision = true
 material = SubResource("ShaderMaterial_r148p")
-
-[node name="Player" parent="SubViewport/JobCorpWarehouse" groups=["player"] instance=ExtResource("1_gf5af")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.15661, 37.0557)
 
 [node name="OUTSIDE WALLS" type="Node3D" parent="SubViewport/JobCorpWarehouse"]
 
@@ -200,7 +202,6 @@ size = Vector3(2.08801, 15.2563, 1)
 [node name="LIGHTS" type="Node3D" parent="SubViewport/JobCorpWarehouse"]
 
 [node name="LeftRow" type="Node3D" parent="SubViewport/JobCorpWarehouse/LIGHTS"]
-visible = false
 
 [node name="WarehouseLight" parent="SubViewport/JobCorpWarehouse/LIGHTS/LeftRow" instance=ExtResource("5_otcc1")]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -31, 18.217, 20)
@@ -224,7 +225,6 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -31, 1
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -31, 18.217, -30)
 
 [node name="MiddleRow" type="Node3D" parent="SubViewport/JobCorpWarehouse/LIGHTS"]
-visible = false
 
 [node name="WarehouseLight" parent="SubViewport/JobCorpWarehouse/LIGHTS/MiddleRow" instance=ExtResource("5_otcc1")]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 18.217, 20)
@@ -249,7 +249,6 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 18.
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 18.217, -30)
 
 [node name="RightRow" type="Node3D" parent="SubViewport/JobCorpWarehouse/LIGHTS"]
-visible = false
 
 [node name="WarehouseLight" parent="SubViewport/JobCorpWarehouse/LIGHTS/RightRow" instance=ExtResource("5_otcc1")]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 31, 18.217, 20)
@@ -309,7 +308,6 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 14.065
 transform = Transform3D(0.389751, 0, -0.92092, 0, 1, 0, 0.92092, 0, 0.389751, 6.56446, 0.017, 36.3935)
 
 [node name="fence" parent="SubViewport/JobCorpWarehouse/FENCES" instance=ExtResource("9_gqoy7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="fence2" parent="SubViewport/JobCorpWarehouse/FENCES" instance=ExtResource("9_gqoy7")]
 transform = Transform3D(0.998762, 0, 0.0497388, 0, 1, 0, -0.0497388, 0, 0.998762, -5.62672, 9.53674e-07, 0.155125)
@@ -430,3 +428,9 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.7612
 
 [node name="warehouse_racks9" parent="SubViewport/JobCorpWarehouse" instance=ExtResource("7_no8pb")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.76128, 3.72385, 3.65559)
+
+[node name="GarageDoor" parent="SubViewport/JobCorpWarehouse" instance=ExtResource("12_1kblk")]
+transform = Transform3D(0.0245543, 0, -0.999699, 0, 1, 0, 0.999699, 0, 0.0245543, 1.51525, 0.787078, 20.4703)
+
+[node name="push_button" parent="SubViewport/JobCorpWarehouse" instance=ExtResource("13_bjlx8")]
+transform = Transform3D(0.226124, 0, -0.974098, 0, 1, 0, 0.974098, 0, 0.226124, 1.80443, 1.69701, 24.6072)

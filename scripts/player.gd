@@ -33,6 +33,9 @@ var rotation_power = 0.2
 var locked = false
 var throw_power = 4
 
+# Interact variables
+var interact_object
+
 # Audio
 @onready var sn_walking = $AudioWalking
 @onready var sn_walking_pants = $AudioWalkingPants
@@ -62,6 +65,9 @@ func _unhandled_input(event):
 			pick_object()
 		elif picked_object != null:
 			drop_object()
+	
+	if Input.is_action_just_pressed("interact"):
+		interact()
 	
 	if Input.is_action_pressed("rclick"):
 		if picked_object != null:
@@ -182,7 +188,14 @@ func rotate_object(event):
 			staticbody.rotate_x(deg_to_rad(event.relative.y * rotation_power))
 			staticbody.rotate_y(deg_to_rad(event.relative.x * rotation_power))
 
-
+func interact():
+	if interaction.get_collider() != null:
+		interact_object = interaction.get_collider()
+		if interact_object.is_in_group("push_button"):
+			print(interact_object)
+		
+		
+	
 
 
 

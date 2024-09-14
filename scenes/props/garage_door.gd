@@ -21,7 +21,7 @@ enum States {
 const SPEED = 0.005
 
 func _input(event):
-	if Input.is_action_just_pressed("jump"):
+	if Input.is_action_just_pressed("debug_1"):
 		if state == States.CLOSED or state == States.CLOSING:
 			state = States.OPENING
 		elif state == States.OPEN or state == States.OPENING:
