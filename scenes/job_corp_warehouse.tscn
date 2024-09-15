@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://u2fgvdawyr4s"]
+[gd_scene load_steps=29 format=3 uid="uid://u2fgvdawyr4s"]
 
 [ext_resource type="PackedScene" uid="uid://6gs11pnmf4lk" path="res://scenes/player.tscn" id="1_gf5af"]
 [ext_resource type="Shader" path="res://shaders/ps1_post_processing.gdshader" id="1_yyrm2"]
@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://4l6chfcr78vn" path="res://scenes/props/products/scrap_pack.tscn" id="15_g30y8"]
 [ext_resource type="PackedScene" uid="uid://dnwixuk57l7s2" path="res://scenes/props/products/rad_shield.tscn" id="16_lygvk"]
 [ext_resource type="PackedScene" uid="uid://i67c6lc6o3lk" path="res://scenes/props/products/nukik.tscn" id="17_nlbnk"]
+[ext_resource type="PackedScene" uid="uid://03w836qd52wg" path="res://scenes/props/products/malice_maid.tscn" id="18_nu4md"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0u6t1"]
 shader = ExtResource("1_yyrm2")
@@ -418,9 +419,6 @@ transform = Transform3D(0.0245543, 0, 0.999698, 0, 1, 0, -0.999698, 0, 0.0245543
 [node name="Radrox3" parent="SubViewport/JobCorpWarehouse/Products" instance=ExtResource("14_1dmtp")]
 transform = Transform3D(-0.0645496, 0, -0.997914, 0, 1, 0, 0.997914, 0, -0.0645496, -7.19471, 2.04333, 1.20843)
 
-[node name="Radrox4" parent="SubViewport/JobCorpWarehouse/Products" instance=ExtResource("14_1dmtp")]
-transform = Transform3D(-0.940501, 0, -0.339788, 0, 1, 0, 0.339788, 0, -0.940501, -11.6069, 0.495789, 1.10006)
-
 [node name="ScrapPack" parent="SubViewport/JobCorpWarehouse/Products" instance=ExtResource("15_g30y8")]
 transform = Transform3D(0.982388, 0, 0.18685, 0, 1, 0, -0.18685, 0, 0.982388, -7.32169, 0.481799, 1.02859)
 
@@ -437,6 +435,15 @@ transform = Transform3D(0.9682, 0, 0.250177, 0, 1, 0, -0.250177, 0, 0.9682, -9.8
 transform = Transform3D(0.945137, 0, -0.326674, 0, 1, 0, 0.326674, 0, 0.945137, -11.5712, 1.89549, 1.20067)
 
 [node name="Nukik3" parent="SubViewport/JobCorpWarehouse/Products" instance=ExtResource("17_nlbnk")]
-transform = Transform3D(0.192556, 0, 0.981285, 0, 1, 0, -0.981285, 0, 0.192556, -9.63383, 0.307965, 1.24826)
+transform = Transform3D(0.192556, 0, 0.981285, 0, 1, 0, -0.981285, 0, 0.192556, -13.0153, 1.87742, 1.16521)
+
+[node name="MaliceMaid" parent="SubViewport/JobCorpWarehouse" instance=ExtResource("18_nu4md")]
+transform = Transform3D(0.953512, 0, 0.301355, 0, 1, 0, -0.301355, 0, 0.953512, 0.080229, 1.0349, 7.50555)
+
+[node name="MaliceMaid2" parent="SubViewport/JobCorpWarehouse" instance=ExtResource("18_nu4md")]
+transform = Transform3D(0.297441, 0, -0.95474, 0, 1, 0, 0.95474, 0, 0.297441, 0.604466, 1.03386, 9.24914)
+
+[node name="MaliceMaid3" parent="SubViewport/JobCorpWarehouse" instance=ExtResource("18_nu4md")]
+transform = Transform3D(0.0225302, 0, -0.999746, 0, 1, 0, 0.999746, 0, 0.0225302, -0.36795, 1.03386, 10.0788)
 
 [connection signal="interacted" from="SubViewport/JobCorpWarehouse/GarageButton" to="SubViewport/JobCorpWarehouse/GarageDoor" method="_on_garage_button_interacted"]

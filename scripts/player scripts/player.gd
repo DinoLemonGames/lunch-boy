@@ -24,6 +24,7 @@ const FOV_CHANGE = 1.5
 
 # View locked?
 var locked = false
+@onready var crosshair = $Head/Camera3D/Crosshair
 
 # Interact variables
 var interact_object
@@ -134,3 +135,7 @@ func _on_doorway_body_entered(body):
 
 func _on_view_lock_change(_locked):
 	locked = _locked
+	if locked: # If the view is locked then hide the crosshair
+		crosshair.visible = false
+	elif !locked:
+		crosshair.visible = true

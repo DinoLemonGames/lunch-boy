@@ -3,10 +3,9 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b045cpn857ul5"
-path.s3tc="res://.godot/imported/Vampazon_Vampazon.png-b7e26441a392244813947f3fad2723d1.s3tc.ctex"
+path="res://.godot/imported/Vampazon_Vampazon.png-b7e26441a392244813947f3fad2723d1.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 generator_parameters={
 "md5": "16354d8fb4457f8df48a993053f84a0e"
@@ -15,11 +14,11 @@ generator_parameters={
 [deps]
 
 source_file="res://models/glb files/Products/Vampazon_Vampazon.png"
-dest_files=["res://.godot/imported/Vampazon_Vampazon.png-b7e26441a392244813947f3fad2723d1.s3tc.ctex"]
+dest_files=["res://.godot/imported/Vampazon_Vampazon.png-b7e26441a392244813947f3fad2723d1.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

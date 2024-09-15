@@ -3,10 +3,9 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cu6o2eq7whvcb"
-path.s3tc="res://.godot/imported/radrox_radrox logo.png-273999634c1f5b2d90bb5daa85f66373.s3tc.ctex"
+path="res://.godot/imported/radrox_radrox logo.png-273999634c1f5b2d90bb5daa85f66373.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 generator_parameters={
 "md5": "299391c1b8d56932f13b286ff6fe7cd7"
@@ -15,11 +14,11 @@ generator_parameters={
 [deps]
 
 source_file="res://models/glb files/Products/radrox_radrox logo.png"
-dest_files=["res://.godot/imported/radrox_radrox logo.png-273999634c1f5b2d90bb5daa85f66373.s3tc.ctex"]
+dest_files=["res://.godot/imported/radrox_radrox logo.png-273999634c1f5b2d90bb5daa85f66373.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

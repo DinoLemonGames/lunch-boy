@@ -1,0 +1,78 @@
+[gd_scene load_steps=8 format=4 uid="uid://03w836qd52wg"]
+
+[ext_resource type="Texture2D" uid="uid://b3qr31klk5xbk" path="res://models/glb files/Products/MaliceMaid_Malice Maid.png" id="1_k65ht"]
+[ext_resource type="Shader" path="res://shaders/psx.gdshader" id="2_cy4nn"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rkjgu"]
+resource_name = "Material"
+cull_mode = 2
+albedo_texture = ExtResource("1_k65ht")
+roughness = 0.5
+texture_filter = 2
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_2fpyo"]
+_surfaces = [{
+"aabb": AABB(-1, -1, -1, 2, 2, 2),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray("AAAGAAQAAAACAAYAAwAGAAIAAwAHAAYABwAEAAYABwAFAAQABQADAAEABQAHAAMAAQACAAAAAQADAAIABQAAAAQABQABAAAA"),
+"name": "Material",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("/////wAAAAD//wAAAAAAAP///////wAA//8AAP//AAAAAP//AAAAAAAAAAAAAAAAAAD/////AAAAAAAA//8AAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_ceqls"]
+resource_name = "MaliceMaid_Cube"
+_surfaces = [{
+"aabb": AABB(-1, -1, -1, 2, 2, 2),
+"attribute_data": PackedByteArray("0Fc8Wj3mMlpqVmJaaVjwWdBX0IlqVp+I++V1WsLmVIksKGJarFiWiT3mVIksKJ+I2igiWpLmPFpiWDJa2ihbiLLl8FmS5tCJ/lUiWiBY8FkgWNiJ/lVbiPTlloliWJaJ"),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray("AQAUAA4AAQAHABQACgATAAYACgAXABMAFQAMABIAFQAPAAwAEAAJAAMAEAAWAAkABQAIAAIABQALAAgAEQAAAA0AEQAEAAAA"),
+"material": SubResource("StandardMaterial3D_rkjgu"),
+"name": "Material",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("/////wAA////////AAD/v/////8AAP+///8AAAAA/////wAAAAD/////AAAAAP+/////////coD/////////v/////////+///8AAP///////wAA//8cgP//AAD///+/AAD//wAA/78AAP//AAD//wAA//8AAP+/AAAAAAAA/78AAAAAAAD//wAAAAAAAP//AAD//////78AAP////8cgAAA//////+/AAAAAP///78AAAAA/////wAAAAD//ziA/3///0z/WID/fwAA/3//P/9/////fwAA/////5v+sYD/fwAA/3//P///////fwAA/3////9///////9//3////9//z//f////3////////9M/1iA/3////9//z//f/9/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_2fpyo")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_h6fbk"]
+render_priority = 0
+shader = ExtResource("2_cy4nn")
+shader_parameter/point_size = null
+shader_parameter/roughness = null
+shader_parameter/metallic_texture_channel = null
+shader_parameter/specular = null
+shader_parameter/metallic = null
+shader_parameter/emission = null
+shader_parameter/emission_energy = null
+shader_parameter/uv1_scale = null
+shader_parameter/uv1_offset = null
+shader_parameter/uv2_scale = null
+shader_parameter/uv2_offset = null
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/resolution = Vector2i(320, 240)
+shader_parameter/affine_mapping = false
+shader_parameter/alpha_scissor = 0.5
+shader_parameter/jitter = 0.25
+shader_parameter/texture_albedo = ExtResource("1_k65ht")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_q6dog"]
+size = Vector3(2.27734, 0.76001, 0.771484)
+
+[node name="MaliceMaid" type="RigidBody3D" groups=["light_motion"]]
+
+[node name="Cube" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.125, 0, 0, 0, 0.375, 0, 0, 0, 0.375, 0, 0, 0)
+mesh = SubResource("ArrayMesh_ceqls")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("ShaderMaterial_h6fbk")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_q6dog")

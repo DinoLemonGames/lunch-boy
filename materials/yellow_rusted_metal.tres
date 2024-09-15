@@ -1,7 +1,7 @@
 [gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://b1bspucnp0yqy"]
 
 [ext_resource type="Shader" path="res://shaders/psx.gdshader" id="1_nc6ai"]
-[ext_resource type="Texture2D" uid="uid://mxnav4j0c2uu" path="res://textures/warehouse_racks_Yellow Rusted Paint.png" id="2_ljrkf"]
+[ext_resource type="Texture2D" uid="uid://dypcxl8unvnfb" path="res://models/glb files/Racks/warehouse_racks_Yellow Rusted Paint.png" id="2_ool5g"]
 
 [resource]
 render_priority = 0
@@ -21,8 +21,5 @@ shader_parameter/albedo = Color(1, 1, 1, 1)
 shader_parameter/resolution = Vector2i(320, 240)
 shader_parameter/affine_mapping = false
 shader_parameter/alpha_scissor = 0.5
-shader_parameter/jitter = 0.15
-shader_parameter/texture_metallic = ExtResource("2_ljrkf")
-shader_parameter/texture_roughness = ExtResource("2_ljrkf")
-shader_parameter/texture_emission = ExtResource("2_ljrkf")
-shader_parameter/texture_albedo = ExtResource("2_ljrkf")
+shader_parameter/jitter = 0.25
+shader_parameter/texture_albedo = ExtResource("2_ool5g")

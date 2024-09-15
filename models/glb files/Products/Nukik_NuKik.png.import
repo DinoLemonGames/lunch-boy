@@ -3,10 +3,9 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://j3i71uswa021"
-path.s3tc="res://.godot/imported/Nukik_NuKik.png-88f0a1683dbd9e3ce613ec2af621bc38.s3tc.ctex"
+path="res://.godot/imported/Nukik_NuKik.png-88f0a1683dbd9e3ce613ec2af621bc38.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 generator_parameters={
 "md5": "06584cd15e607b91537960f60544a1be"
@@ -15,11 +14,11 @@ generator_parameters={
 [deps]
 
 source_file="res://models/glb files/Products/Nukik_NuKik.png"
-dest_files=["res://.godot/imported/Nukik_NuKik.png-88f0a1683dbd9e3ce613ec2af621bc38.s3tc.ctex"]
+dest_files=["res://.godot/imported/Nukik_NuKik.png-88f0a1683dbd9e3ce613ec2af621bc38.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1

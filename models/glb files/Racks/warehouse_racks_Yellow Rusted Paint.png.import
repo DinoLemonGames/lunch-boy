@@ -3,10 +3,9 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dypcxl8unvnfb"
-path.s3tc="res://.godot/imported/warehouse_racks_Yellow Rusted Paint.png-1084cb3471fe65f44b0263d5bfeaa227.s3tc.ctex"
+path="res://.godot/imported/warehouse_racks_Yellow Rusted Paint.png-1084cb3471fe65f44b0263d5bfeaa227.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 generator_parameters={
 "md5": "a19639b277a296e88a01040dc6357802"
@@ -15,11 +14,11 @@ generator_parameters={
 [deps]
 
 source_file="res://models/glb files/Racks/warehouse_racks_Yellow Rusted Paint.png"
-dest_files=["res://.godot/imported/warehouse_racks_Yellow Rusted Paint.png-1084cb3471fe65f44b0263d5bfeaa227.s3tc.ctex"]
+dest_files=["res://.godot/imported/warehouse_racks_Yellow Rusted Paint.png-1084cb3471fe65f44b0263d5bfeaa227.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
