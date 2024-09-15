@@ -5,6 +5,10 @@ extends Node3D
 @onready var follow3 = $Path3D/Follow3
 @onready var follow4 = $Path3D/Follow4
 
+# Sounds
+@onready var door_shut = $DoorShut
+@onready var door_open = $DoorOpen
+
 var follow1_start
 var follow2_start
 var follow3_start
@@ -18,7 +22,7 @@ enum States {
 	CLOSED
 }
 
-const SPEED = 0.005
+const SPEED = 0.002
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -46,7 +50,9 @@ func _process(delta):
 			state = States.CLOSED
 
 func _on_garage_button_interacted(body):
-	if state == States.CLOSED or state == States.CLOSING:
+	if state == States.CLOSED:
+		door_open.play()
 		state = States.OPENING
-	elif state == States.OPEN or state == States.OPENING:
+	elif state == States.OPEN:
+		door_shut.play()
 		state = States.CLOSING

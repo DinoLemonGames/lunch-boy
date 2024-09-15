@@ -1,8 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://qib5fndvo3ml"]
+[gd_scene load_steps=10 format=3 uid="uid://qib5fndvo3ml"]
 
 [ext_resource type="Shader" path="res://shaders/psx.gdshader" id="1_ligr8"]
 [ext_resource type="Script" path="res://scripts/garage_door.gd" id="1_m2web"]
 [ext_resource type="Texture2D" uid="uid://hjrp3qmrdyh8" path="res://textures/garage_door.png" id="2_m7ffw"]
+[ext_resource type="AudioStream" uid="uid://bx37ty56u6ewk" path="res://sounds/garage door/garage_door_shutting.wav" id="4_wt36j"]
+[ext_resource type="AudioStream" uid="uid://drsc7fkvcitua" path="res://sounds/garage door/garage_door_open.wav" id="5_mouog"]
 
 [sub_resource type="Curve3D" id="Curve3D_puyyw"]
 _data = {
@@ -117,3 +119,10 @@ fov = 55.7
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.986638, 0.0204826, 0.161637, -0.16293, 0.124034, 0.97881, 0, -0.992067, 0.125714, 0, 7.42571, 0)
 visible = false
+
+[node name="DoorShut" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_wt36j")
+panning_strength = 0.0
+
+[node name="DoorOpen" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("5_mouog")
