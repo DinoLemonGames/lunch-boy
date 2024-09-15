@@ -1,0 +1,145 @@
+[gd_scene load_steps=13 format=4 uid="uid://dnwixuk57l7s2"]
+
+[ext_resource type="Texture2D" uid="uid://cfbx7v4b7r2sg" path="res://models/glb files/Products/RadShield_RadShield Cap.png" id="1_hkw01"]
+[ext_resource type="Shader" path="res://shaders/psx.gdshader" id="2_1atxd"]
+[ext_resource type="Texture2D" uid="uid://cqq4qojgkm3bn" path="res://models/glb files/Products/RadShield_RadShield.png" id="3_h7tdr"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xv05p"]
+resource_name = "Cap"
+cull_mode = 2
+albedo_texture = ExtResource("1_hkw01")
+texture_filter = 2
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_ghexa"]
+_surfaces = [{
+"aabb": AABB(-0.0760845, -0.05, -0.08, 0.152169, 0.1, 0.144721),
+"format": 34896613377,
+"index_count": 48,
+"index_data": PackedByteArray("AAADAAEAAAACAAMAAgAFAAMAAgAEAAUABAAHAAUABAAGAAcABQABAAMAAQAHAAkAAQAFAAcABgAJAAcABgAIAAkACAABAAkACAAAAAEACAACAAAAAgAGAAQAAgAIAAYA"),
+"name": "Cap",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 10,
+"vertex_data": PackedByteArray("/38AAAAAAAD/f///AAAAAP//AADIYQAA/////8hhAAAazwAA//8AABrP/////wAA5DAAAP//AADkMP////8AAAAAAADIYQAAAAD//8hhAAA=")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_ihi1h"]
+resource_name = "RadShield_Cylinder_001"
+_surfaces = [{
+"aabb": AABB(-0.0760845, -0.05, -0.08, 0.152169, 0.1, 0.144721),
+"attribute_data": PackedByteArray("AAD/f/+/joL///9/AAAAAP8/joL//wAAbfoCrczM/3/MzP9/bnoCrczMAADMzAAAHOSz8ZmZ/3+Zmf9/mZkAABxks/GZmQAAZmb/f+Kbs/FmZv9/ZmYAAGZmAADiG7PxMzP/fzMz/3+QhQKtMzMAADMzAACRBQKt"),
+"format": 34896613399,
+"index_count": 48,
+"index_data": PackedByteArray("AgAKAAUAAgAHAAoACAARAAsACAAOABEADQAWAA8ADQAUABYAEAAEAAkABAAXAB0ABAAQABcAEgAbABUAEgAYABsAGQADABwAGQAAAAMAGgAGAAEABgATAAwABgAaABMA"),
+"material": SubResource("StandardMaterial3D_xv05p"),
+"name": "Cap",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 30,
+"vertex_data": PackedByteArray("/38AAAAAZeb/fwAAAAD/P/9/AAAAAGXm/3///wAAZeb/f///AAD/v/9///8AAGXm//8AAMhh/z///wAAyGFl5v//AADIYTKz/////8hh/7//////yGFl5v/////IYTKzGs8AAP///z8azwAA//8AgBrPAAD//zKzGs//////AIAaz///////vxrP/////zKz5DAAAP//MrPkMAAA////P+QwAAD//wCA5DD/////MrPkMP////8AgOQw//////+/AAAAAMhhMrMAAAAAyGFl5gAAAADIYf8/AAD//8hhMrMAAP//yGFl5gAA///IYf+//3///wAA/3//fwAA/3///////3//fwAAAAD/f/9/AAD/fwAA////f/9/AAD/fwAAAAD/f/9/////fwAA/3///////3//fwAA/3///wAA/3//f////3////9///////9//3////9///8AAP9//3////9///////9/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_ghexa")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_742f4"]
+render_priority = 0
+shader = ExtResource("2_1atxd")
+shader_parameter/point_size = null
+shader_parameter/roughness = null
+shader_parameter/metallic_texture_channel = null
+shader_parameter/specular = null
+shader_parameter/metallic = null
+shader_parameter/emission = null
+shader_parameter/emission_energy = null
+shader_parameter/uv1_scale = null
+shader_parameter/uv1_offset = null
+shader_parameter/uv2_scale = null
+shader_parameter/uv2_offset = null
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/resolution = Vector2i(320, 240)
+shader_parameter/affine_mapping = false
+shader_parameter/alpha_scissor = 0.5
+shader_parameter/jitter = 0.25
+shader_parameter/texture_albedo = ExtResource("1_hkw01")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5y8hd"]
+resource_name = "RadShield"
+cull_mode = 2
+albedo_texture = ExtResource("3_h7tdr")
+texture_filter = 2
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_uv3by"]
+_surfaces = [{
+"aabb": AABB(-0.32, -0.501108, -0.32, 0.64, 0.974449, 0.64),
+"format": 34896613377,
+"index_count": 180,
+"index_data": PackedByteArray("EAAYABkAEAARABgAEQAaABgAEQASABoAEgAbABoAEgATABsAEwAcABsAEwAUABwAFAAdABwAFAAVAB0AFQAeAB0AFQAWAB4ABQABAAMAAQANAA8ADQAJAAsACQAFAAcABQANAAEADQAFAAkAFgAfAB4AFgAXAB8AFwAZAB8AFwAQABkADgACAAAAAgAGAAQABgAKAAgACgAOAAwADgAGAAIABgAOAAoAAgAQAAAAAgARABAABAARAAIABAASABEABgASAAQABgATABIACAATAAYACAAUABMACgAUAAgACgAVABQADAAVAAoADAAWABUADgAWAAwADgAXABYAAAAXAA4AAAAQABcAAQAYAAMAAQAZABgAAwAaAAUAAwAYABoABQAbAAcABQAaABsABwAcAAkABwAbABwACQAdAAsACQAcAB0ACwAeAA0ACwAdAB4ADQAfAA8ADQAeAB8ADwAZAAEADwAfABkA"),
+"name": "RadShield",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 32,
+"vertex_data": PackedByteArray("/38AADUSAADnf///uSYAAKHNAABdMgAAjLH2/Z00AADJ7QAA/38AAI/TcPf/fwAAoc0AAKHNAABdsfb9yssAAP9/AADJ7QAA5H///9jbAABdMgAAoc0AAIRM9v3PywAANRIAAP9/AADwLXD3/38AAF0yAABdMgAAWUz2/Zg0AAD/f20NAAAAAIHabQ19JQAA//9tDf9/AACB2m0NgdoAAP9/bQ3//wAAfSVtDYHaAAAAAG0N/38AAH0lbQ19JQAAi76K8n0lAAD/f935/RMAAGHn9+j/fwAAi76K8oHaAAD/f935zu4AAPY+ivKB2gAAdRr36P9/AAD2PoryfSUAAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_swk7i"]
+resource_name = "RadShield_Cylinder"
+_surfaces = [{
+"aabb": AABB(-0.32, -0.501108, -0.32, 0.64, 0.974449, 0.64),
+"attribute_data": PackedByteArray("7b8n/+/A86Xtvyf/6b9/ova/W4Dpv3+iDsh5q4DNJ/+AzSf/lsVNg5fICqcczZ6AAsvOuO2/J//tvyf/cclJk+2/3oPtv96DDsgixoDNJ/9asif/kcVco4/Ig9issp6A7b8n/+/AqMvtvyf/6L/E3fa/xKbov8TdWrIn/1qyJ//PuSLGq7KegO22hNgjul6j7b8n/+2/J//cts647b/eg+2/3oOstkmTgM0n/1qyJ//PuXmrHM2egOW2CacfukyD0OIc/u2/dvjtv3b40OIc/sHPdvgW0F7/wc92+MHP///tv3b47b92+JnAvf4+vb3+wc92+JKyHP4ZsHb4c7Je/7iefP3tv3b47b92+LiefP2Ojnz9GbB2+DeNHP4ZsHb4qf8c/t2AXv/tv3b47b92+Kb0fP3Bz3b4h/R8/Rmwdvjdyhei6NEHgMHPTobE0Wd/J+SFf+2/XZztv12cJ+SFf+2/FIvtvxSL8MFogDy8aIDdylPdCbFnfxmwToZxsQeAuJ4mgO2/+OPtv/jjuJ4mgDeNSYEZsE6GT42ogI60U93//wmBh4AJge2/FIvtvxSLqPWogMHPTob19KiAjrQXog=="),
+"format": 34896613399,
+"index_count": 180,
+"index_data": PackedByteArray("MwBRAFcAMwA1AFEANwBaAFMANwA6AFoAOwBfAFsAOwA/AF8APQBjAF0APQBDAGMAQABmAGAAQABGAGYARABpAGQARABJAGkADwAEAAkABAApAC8AKQAcACMAHAAPABUADwApAAQAKQAPABwASABsAGgASABMAGwATgBUAG4ATgAwAFQALAAGAAEABgASAAwAEgAgABkAIAAsACYALAASAAYAEgAsACAABwAyAAIABwA0ADIADQA2AAgADQA4ADYAFAA5AA4AFAA+ADkAGgA8ABMAGgBCADwAHwBBABgAHwBHAEEAJQBFAB4AJQBLAEUAKgBKACQAKgBNAEoAAABPACsAAAAxAE8ABQBQAAoABQBWAFAACwBZABEACwBSAFkAEABeABcAEABYAF4AFgBiAB0AFgBcAGIAGwBnACIAGwBhAGcAIQBrACgAIQBlAGsAJwBtAC0AJwBqAG0ALgBVAAMALgBvAFUA"),
+"material": SubResource("StandardMaterial3D_5y8hd"),
+"name": "RadShield",
+"primitive": 3,
+"uv_scale": Vector4(2.0032, 2.00706, 0, 0),
+"vertex_count": 112,
+"vertex_data": PackedByteArray("/38AADUSfhv/fwAANRL/P/9/AAA1En4b53///7km7dfnf///uSb+v+d///+5JqDXoc0AAF0y/z+hzQAAXTJ+G6HNAABdMibTjLH2/Z00/r+Msfb9nTSj14yx9v2dNBzQye0AAP9//z/J7QAA/38m08ntAAD/f762j9Nw9/9//r+P03D3/3/Luo/TcPf/f2zQoc0AAKHN/z+hzQAAoc0joKHNAAChzb62XbH2/crL/r9dsfb9ysuDq12x9v3Ky7i6/38AAMntI6D/fwAAye3/P/9/AADJ7SOg5H///9jb7Krkf///2Nv+v+R////Y25eqXTIAAKHNXw9dMgAAoc0joF0yAAChzf8/hEz2/c/LSRKETPb9z8v0qoRM9v3Py/6/NRIAAP9/Lhc1EgAA/39fDzUSAAD/f/8/8C1w9/9/fBfwLXD3/3+WEfAtcPf/f/6/XTIAAF0yLhddMgAAXTJ+G10yAABdMv8/WUz2/Zg0nRdZTPb9mDSn11lM9v2YNP6//39tDQAAD/L/f20NAAB+G/9/bQ0AAH4b/39tDQAA0vGB2m0NfSV+G4HabQ19Jc7xgdptDX0lJtOB2m0NfSWK0P//bQ3/fybT//9tDf9/vrb//20N/3+C0P//bQ3/f52vgdptDYHaI6CB2m0NgdrhjoHabQ2B2r62gdptDYHaoa//f20N//+ojv9/bQ3//yOg/39tDf//I6D/f20N///rjn0lbQ2B2n+wfSVtDYHaXw99JW0Ngdqxjn0lbQ2B2iOgAABtDf9/pM8AAG0N/3+VsAAAbQ3/fy4XAABtDf9/Xw99JW0NfSWbz30lbQ19JS4XfSVtDX0lEvJ9JW0NfSV+G4u+ivJ9JaLXi76K8n0l9vGLvoryfSUN0Iu+ivJ9JbnQ/3/d+f0TJfL/f935/RPT1/9/3fn9E6DX/3/d+f0T//Fh5/fo/3/OumHn9+j/f1bQYef36P9/rtBh5/fo/3+9r4u+ivKB2r2ri76K8oHazpCLvorygdq9uou+ivKB2q+v/3/d+c7uq4//f935zu7qqv9/3fnO7uSq/3/d+c7uGZD2PorygdqdsPY+ivKB2msS9j6K8oHaV4/2PorygdryqnUa9+j/f/TPdRr36P9/hbB1Gvfo/392F3Ua9+j/f8YR9j6K8n0l3M/2PoryfSWUF/Y+ivJ9JSvy9j6K8n0lm9c7G894AAD/fy8HOpte87CW////f27nGnAAAP9/Lwc6m89s6C/+//9/fuc/cH2zIBYAAP9/z2zoL8Bbdjz+//9/Dr0WI0OzSBUAAP9/ATeCV8Bbdjz+//9/1da6chG9USN9KAG3AAD/fwE3glfO8b6n////f6zYm27MVVppfSgBtwAA/39E6dwt8/HQp/7//3/nPOxvzFVaaQAA/3+Y7es91ehwLf7//3/nPOxvOxvPeAAA/3+87Q4+VO9amP7//39lf878OxvPeC8HOpusg1sBLwc6m8WEtgLPbOgvm3khAM9s6C/AW3Y8cobRAGKJnQgBN4JXK4zqC8Bbdjz6iU8HRYv/8n0oAbcBN4JXyJHsCUqFXPXMVVpptomC7n0oAbdJggz5IYNv9Oc87G/MVVpp54OM+Oc87G+gfuv7OxvPeHjnMnCSdc8GiLNJFiZzOARVev32/PFCl2rnEHDGc14IDb0NI1KzghVjdG8DK42QFHTWlHPpjis2EL1CIzOM0hGBre/xxPG6pwHYGXB6juYvQJY38lrp8S3cqEHy5/HKp916lfFwkpXzku3lPfPojS1+fC70su0FPjt5uPWB7rGY")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_uv3by")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8u4ys"]
+render_priority = 0
+shader = ExtResource("2_1atxd")
+shader_parameter/point_size = null
+shader_parameter/roughness = null
+shader_parameter/metallic_texture_channel = null
+shader_parameter/specular = null
+shader_parameter/metallic = null
+shader_parameter/emission = null
+shader_parameter/emission_energy = null
+shader_parameter/uv1_scale = null
+shader_parameter/uv1_offset = null
+shader_parameter/uv2_scale = null
+shader_parameter/uv2_offset = null
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/resolution = Vector2i(320, 240)
+shader_parameter/affine_mapping = false
+shader_parameter/alpha_scissor = 0.5
+shader_parameter/jitter = 0.25
+shader_parameter/texture_albedo = ExtResource("3_h7tdr")
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_ea66f"]
+height = 1.11439
+radius = 0.327764
+
+[node name="RadShield" type="RigidBody3D" groups=["light_motion"]]
+
+[node name="Cap" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1.45982, 0, 0, 0, 1, 0, 0.513214, 0)
+mesh = SubResource("ArrayMesh_ihi1h")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("ShaderMaterial_742f4")
+
+[node name="Bottle" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.600614, 0.000673115, 0, 0)
+mesh = SubResource("ArrayMesh_swk7i")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("ShaderMaterial_8u4ys")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0468671, 0)
+shape = SubResource("CylinderShape3D_ea66f")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://u2fgvdawyr4s"]
+[gd_scene load_steps=28 format=3 uid="uid://u2fgvdawyr4s"]
 
 [ext_resource type="PackedScene" uid="uid://6gs11pnmf4lk" path="res://scenes/player.tscn" id="1_gf5af"]
 [ext_resource type="Shader" path="res://shaders/ps1_post_processing.gdshader" id="1_yyrm2"]
@@ -6,13 +6,17 @@
 [ext_resource type="Texture2D" uid="uid://d4dpwst4oij6l" path="res://textures/concrete 8.jpg" id="3_ba6ou"]
 [ext_resource type="Script" path="res://scenes/warehouse_environment.gd" id="3_hv00i"]
 [ext_resource type="PackedScene" uid="uid://dgwbdh7pm6xrj" path="res://scenes/lights/warehouse_light.tscn" id="5_otcc1"]
-[ext_resource type="Shader" path="res://shaders/psx.gdshader" id="6_6al6s"]
-[ext_resource type="Texture2D" uid="uid://mxnav4j0c2uu" path="res://textures/warehouse_racks_Yellow Rusted Paint.png" id="7_lcfqj"]
 [ext_resource type="PackedScene" uid="uid://bktcoa28q5ae6" path="res://scenes/props/warehouse_racks.tscn" id="7_no8pb"]
 [ext_resource type="PackedScene" uid="uid://ceo3bgyb3rf1p" path="res://scenes/props/fence.tscn" id="9_gqoy7"]
+[ext_resource type="Texture2D" uid="uid://dypcxl8unvnfb" path="res://models/glb files/Racks/warehouse_racks_Yellow Rusted Paint.png" id="9_kww0i"]
 [ext_resource type="PackedScene" uid="uid://d0punf124xwt6" path="res://scenes/props/wall.tscn" id="10_4rws6"]
 [ext_resource type="PackedScene" uid="uid://qib5fndvo3ml" path="res://scenes/props/garage_door.tscn" id="12_1kblk"]
 [ext_resource type="PackedScene" uid="uid://cdxymtojo3akb" path="res://scenes/props/garage_button.tscn" id="13_5rmi7"]
+[ext_resource type="PackedScene" uid="uid://s35g8oxeeg8m" path="res://scenes/props/products/radrox.tscn" id="14_1dmtp"]
+[ext_resource type="PackedScene" uid="uid://c4scsws3wspbu" path="res://scenes/props/products/vampazon.tscn" id="14_7pw3q"]
+[ext_resource type="PackedScene" uid="uid://4l6chfcr78vn" path="res://scenes/props/products/scrap_pack.tscn" id="15_g30y8"]
+[ext_resource type="PackedScene" uid="uid://dnwixuk57l7s2" path="res://scenes/props/products/rad_shield.tscn" id="16_lygvk"]
+[ext_resource type="PackedScene" uid="uid://i67c6lc6o3lk" path="res://scenes/props/products/nukik.tscn" id="17_nlbnk"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0u6t1"]
 shader = ExtResource("1_yyrm2")
@@ -107,29 +111,13 @@ shader_parameter/uv2_offset = Vector3(0, 0, 0)
 shader_parameter/texture_albedo = ExtResource("3_ba6ou")
 shader_parameter/texture_roughness = SubResource("CompressedTexture2D_pkjfi")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_chl8m"]
-render_priority = 0
-shader = ExtResource("6_6al6s")
-shader_parameter/point_size = null
-shader_parameter/roughness = null
-shader_parameter/metallic_texture_channel = null
-shader_parameter/specular = null
-shader_parameter/metallic = null
-shader_parameter/emission = null
-shader_parameter/emission_energy = null
-shader_parameter/uv1_scale = null
-shader_parameter/uv1_offset = null
-shader_parameter/uv2_scale = null
-shader_parameter/uv2_offset = null
-shader_parameter/albedo = Color(1, 1, 1, 1)
-shader_parameter/resolution = Vector2i(320, 240)
-shader_parameter/affine_mapping = false
-shader_parameter/alpha_scissor = 0.5
-shader_parameter/jitter = 0.15
-shader_parameter/texture_albedo = ExtResource("7_lcfqj")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ttpa3"]
+albedo_texture = ExtResource("9_kww0i")
+uv1_scale = Vector3(0.44, 0.44, 0.44)
+texture_filter = 0
 
 [sub_resource type="BoxMesh" id="BoxMesh_wbwst"]
-material = SubResource("ShaderMaterial_chl8m")
+material = SubResource("StandardMaterial3D_ttpa3")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_nblqe"]
 
@@ -154,7 +142,7 @@ environment = SubResource("Environment_5fl0s")
 script = ExtResource("3_hv00i")
 
 [node name="Player" parent="SubViewport/JobCorpWarehouse" groups=["player"] instance=ExtResource("1_gf5af")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0498068, 1.19957, 38.1853)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.87599, 1.19957, 30.1937)
 
 [node name="FloorCSG" type="CSGBox3D" parent="SubViewport/JobCorpWarehouse"]
 transform = Transform3D(100, 0, 0, 0, 0.034, 0, 0, 0, 80, 0, 0, 0)
@@ -348,26 +336,8 @@ transform = Transform3D(-0.399629, 0, -0.916677, 0, 1, 0, 0.916677, 0, -0.399629
 [node name="fence3" parent="SubViewport/JobCorpWarehouse/FENCES" instance=ExtResource("9_gqoy7")]
 transform = Transform3D(0.989659, 0, -0.143441, 0, 1, 0, 0.143441, 0, 0.989659, -11.1861, 9.53674e-07, -0.0527754)
 
-[node name="Box" type="RigidBody3D" parent="SubViewport/JobCorpWarehouse" groups=["light_motion"]]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.0125108, 1.36238, 13.64)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="SubViewport/JobCorpWarehouse/Box"]
-mesh = SubResource("BoxMesh_wbwst")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewport/JobCorpWarehouse/Box"]
-shape = SubResource("BoxShape3D_nblqe")
-
-[node name="Box2" type="RigidBody3D" parent="SubViewport/JobCorpWarehouse" groups=["light_motion"]]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.0125108, 1.36238, 15.4392)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="SubViewport/JobCorpWarehouse/Box2"]
-mesh = SubResource("BoxMesh_wbwst")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewport/JobCorpWarehouse/Box2"]
-shape = SubResource("BoxShape3D_nblqe")
-
 [node name="Box3" type="RigidBody3D" parent="SubViewport/JobCorpWarehouse" groups=["light_motion"]]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.0125108, 2.95286, 15.4392)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.0125108, 4.57224, 4.49208)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="SubViewport/JobCorpWarehouse/Box3"]
 mesh = SubResource("BoxMesh_wbwst")
@@ -376,30 +346,12 @@ mesh = SubResource("BoxMesh_wbwst")
 shape = SubResource("BoxShape3D_nblqe")
 
 [node name="Box4" type="RigidBody3D" parent="SubViewport/JobCorpWarehouse" groups=["light_motion"]]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.0125108, 2.95286, 13.5894)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.0125108, 4.57224, 2.64228)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="SubViewport/JobCorpWarehouse/Box4"]
 mesh = SubResource("BoxMesh_wbwst")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewport/JobCorpWarehouse/Box4"]
-shape = SubResource("BoxShape3D_nblqe")
-
-[node name="Box5" type="RigidBody3D" parent="SubViewport/JobCorpWarehouse" groups=["light_motion"]]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.0125108, 4.43011, 13.5894)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="SubViewport/JobCorpWarehouse/Box5"]
-mesh = SubResource("BoxMesh_wbwst")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewport/JobCorpWarehouse/Box5"]
-shape = SubResource("BoxShape3D_nblqe")
-
-[node name="Box6" type="RigidBody3D" parent="SubViewport/JobCorpWarehouse" groups=["light_motion"]]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.0125108, 4.43011, 15.5351)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="SubViewport/JobCorpWarehouse/Box6"]
-mesh = SubResource("BoxMesh_wbwst")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="SubViewport/JobCorpWarehouse/Box6"]
 shape = SubResource("BoxShape3D_nblqe")
 
 [node name="warehouse_racks" parent="SubViewport/JobCorpWarehouse" instance=ExtResource("7_no8pb")]
@@ -435,5 +387,56 @@ prompt_message = "Garage Door"
 
 [node name="GarageDoor" parent="SubViewport/JobCorpWarehouse" instance=ExtResource("12_1kblk")]
 transform = Transform3D(0.0245543, 0, -0.999699, 0, 1, 0, 0.999699, 0, 0.0245543, 1.51525, 0.787078, 20.4703)
+
+[node name="Products" type="Node3D" parent="SubViewport/JobCorpWarehouse"]
+transform = Transform3D(0.0245543, 0, -0.999699, 0, 1, 0, 0.999699, 0, 0.0245543, 1.51525, 0.787078, 20.4703)
+
+[node name="Vampazon" parent="SubViewport/JobCorpWarehouse/Products" instance=ExtResource("14_7pw3q")]
+transform = Transform3D(0.999637, 0.00643882, 0.0261541, 0.0257372, 0.0580185, -0.997983, -0.00794326, 0.998294, 0.0578317, -16.3752, 0.601465, 0.886848)
+
+[node name="Vampazon2" parent="SubViewport/JobCorpWarehouse/Products" instance=ExtResource("14_7pw3q")]
+transform = Transform3D(0.970883, 0, -0.23955, 0, 1, 0, 0.23955, 0, 0.970883, -16.5902, 1.9242, 0.881568)
+
+[node name="Vampazon3" parent="SubViewport/JobCorpWarehouse/Products" instance=ExtResource("14_7pw3q")]
+transform = Transform3D(0.988329, 0, 0.15233, 0, 1, 0, -0.15233, 0, 0.988329, -11.6433, 3.72636, 1.00307)
+
+[node name="RadShield" parent="SubViewport/JobCorpWarehouse/Products" instance=ExtResource("16_lygvk")]
+transform = Transform3D(0.963415, 0, -0.268012, 0, 1, 0, 0.268012, 0, 0.963415, -4.50274, 3.64778, 1.64161)
+
+[node name="RadShield2" parent="SubViewport/JobCorpWarehouse/Products" instance=ExtResource("16_lygvk")]
+transform = Transform3D(0.989581, 0, 0.143976, 0, 1, 0, -0.143976, 0, 0.989581, -5.85192, 3.64778, 1.60847)
+
+[node name="RadShield3" parent="SubViewport/JobCorpWarehouse/Products" instance=ExtResource("16_lygvk")]
+transform = Transform3D(0.681794, 0, -0.731544, 0, 1, 0, 0.731544, 0, 0.681794, -7.11136, 3.64778, 1.57753)
+
+[node name="Radrox" parent="SubViewport/JobCorpWarehouse/Products" instance=ExtResource("14_1dmtp")]
+transform = Transform3D(0.950737, 0, 0.309996, 0, 1, 0, -0.309996, 0, 0.950737, -4.48437, 2.04333, 1.49586)
+
+[node name="Radrox2" parent="SubViewport/JobCorpWarehouse/Products" instance=ExtResource("14_1dmtp")]
+transform = Transform3D(0.0245543, 0, 0.999698, 0, 1, 0, -0.999698, 0, 0.0245543, -5.63742, 2.04333, 1.4138)
+
+[node name="Radrox3" parent="SubViewport/JobCorpWarehouse/Products" instance=ExtResource("14_1dmtp")]
+transform = Transform3D(-0.0645496, 0, -0.997914, 0, 1, 0, 0.997914, 0, -0.0645496, -7.19471, 2.04333, 1.20843)
+
+[node name="Radrox4" parent="SubViewport/JobCorpWarehouse/Products" instance=ExtResource("14_1dmtp")]
+transform = Transform3D(-0.940501, 0, -0.339788, 0, 1, 0, 0.339788, 0, -0.940501, -11.6069, 0.495789, 1.10006)
+
+[node name="ScrapPack" parent="SubViewport/JobCorpWarehouse/Products" instance=ExtResource("15_g30y8")]
+transform = Transform3D(0.982388, 0, 0.18685, 0, 1, 0, -0.18685, 0, 0.982388, -7.32169, 0.481799, 1.02859)
+
+[node name="ScrapPack2" parent="SubViewport/JobCorpWarehouse/Products" instance=ExtResource("15_g30y8")]
+transform = Transform3D(0.997877, 0, -0.0651244, 0, 1, 0, 0.0651244, 0, 0.997877, -5.6182, 0.481799, 1.07043)
+
+[node name="ScrapPack3" parent="SubViewport/JobCorpWarehouse/Products" instance=ExtResource("15_g30y8")]
+transform = Transform3D(0.954156, 0, 0.299307, 0, 1, 0, -0.299307, 0, 0.954156, -4.03769, 0.481799, 1.10925)
+
+[node name="Nukik" parent="SubViewport/JobCorpWarehouse/Products" instance=ExtResource("17_nlbnk")]
+transform = Transform3D(0.9682, 0, 0.250177, 0, 1, 0, -0.250177, 0, 0.9682, -9.87331, 1.89549, 1.24238)
+
+[node name="Nukik2" parent="SubViewport/JobCorpWarehouse/Products" instance=ExtResource("17_nlbnk")]
+transform = Transform3D(0.945137, 0, -0.326674, 0, 1, 0, 0.326674, 0, 0.945137, -11.5712, 1.89549, 1.20067)
+
+[node name="Nukik3" parent="SubViewport/JobCorpWarehouse/Products" instance=ExtResource("17_nlbnk")]
+transform = Transform3D(0.192556, 0, 0.981285, 0, 1, 0, -0.981285, 0, 0.192556, -9.63383, 0.307965, 1.24826)
 
 [connection signal="interacted" from="SubViewport/JobCorpWarehouse/GarageButton" to="SubViewport/JobCorpWarehouse/GarageDoor" method="_on_garage_button_interacted"]

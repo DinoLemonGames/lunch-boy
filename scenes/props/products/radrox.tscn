@@ -1,0 +1,80 @@
+[gd_scene load_steps=8 format=4 uid="uid://s35g8oxeeg8m"]
+
+[ext_resource type="Texture2D" uid="uid://cu6o2eq7whvcb" path="res://models/glb files/Products/radrox_radrox logo.png" id="1_674lo"]
+[ext_resource type="Shader" path="res://shaders/psx.gdshader" id="2_arvk2"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4m8fa"]
+resource_name = "radrox"
+cull_mode = 2
+albedo_texture = ExtResource("1_674lo")
+texture_filter = 2
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_23x1a"]
+_surfaces = [{
+"aabb": AABB(-0.334835, -0.48, -0.34, 0.669669, 0.96, 0.659495),
+"format": 34896613377,
+"index_count": 96,
+"index_data": PackedByteArray("AAADAAEAAAACAAMAAgAFAAMAAgAEAAUABAAHAAUABAAGAAcABgAJAAcABgAIAAkACAALAAkACAAKAAsACgANAAsACgAMAA0ADAAPAA0ADAAOAA8ABQABAAMAAQAPABEADwALAA0ACwAHAAkABwABAAUAAQALAA8AAQAHAAsADgARAA8ADgAQABEAEAABABEAEAAAAAEAEAACAAAAAgAGAAQABgAKAAgACgAOAAwADgACABAAAgAKAAYAAgAOAAoA"),
+"lods": [0.311385, PackedByteArray("AAAFAAEAAAAEAAUABAAGAAUABgALAAUABgAKAAsACgAQAAsAEAABAAsAEAAAAAEAAQAFAAsAEAAEAAAABAAQAAoABAAKAAYA"), 0.346069, PackedByteArray("AAALAAEAAAAGAAsABgAQAAsAEAABAAsAEAAAAAEAEAAGAAAA")],
+"name": "radrox",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 18,
+"vertex_data": PackedByteArray("/38AAAAAAAD/f///AAAAAIrTAADgHgAAitP//+AeAAD//wAAD20AAP////8PbQAAjvAAAPfFAACO8P//98UAAHOsAAD//wAAc6z/////AACLUwAA//8AAItT/////wAAcA8AAPfFAABwD///98UAAAAAAAAPbQAAAAD//w9tAAB0LAAA4B4AAHQs///gHgAA")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_tvmng"]
+resource_name = "radrox_Cylinder"
+_surfaces = [{
+"aabb": AABB(-0.334835, -0.48, -0.34, 0.669669, 0.96, 0.659495),
+"attribute_data": PackedByteArray("+37//0r4g/P/////+34cfxCmgIX//xx/1/sH9anx//+p8f//V6nIhqnxHH+p8Rx/o/0m+FPj//9T4///HavdiVPjHH9T4xx/A/2z+/3U///91P//gKpfjf3UHH/91Bx/QvoE/qjG//+oxv//qMYcf8inqI+oxhx/Urj//6r2BP5SuP//Urgcf1K4HH87pKiP/Kn///yp///p87P7/Kkcf/ypHH+EoV+Nppv//6ab//9J8yb4ppscf6abHH/moN2JUY3//1GN//8V9Qf1UY0cf1GNHH+sosiG//////t+HH///xx//dT///3U//9SuBx/Urgcf1K4HH9Rjf//UY3///t+HH9T4///U+Mcf/3U///91P//Urj//1K4//9SuBx/Urgcf1K4HH9Rjf//UY3//w=="),
+"format": 34896613399,
+"index_count": 96,
+"index_data": PackedByteArray("AgAKAAUAAgAHAAoACAAQAAsACAANABAADgAXABEADgAUABcAEwAdABYAEwAaAB0AGQAiABsAGQAgACIAHgAoACEAHgAlACgAJAAtACcAJAAqAC0ADwAEAAkABAAvADUALwAjACkAIwAVABwAFQAEAA8ABAAjAC8ABAAVACMAKwAzAC4AKwAwADMAMQADADQAMQAAAAMAMgAGAAEABgASAAwAEgAfABgAHwAsACYALAAGADIABgAfABIABgAsAB8A"),
+"lods": [0.311385, PackedByteArray("AgAQAAUAAgANABAAQQBDAEIAQwBHAEIARABFAEcARgBKAEgASgBAAEkASwAAAEAABAAPACMAMgAMAAEADAAyAB8ADAAfABIA"), 0.346069, PackedByteArray("NgA7ADgANgA5ADsAOgA+ADwAPwA3AD0APwAAADcAMgASAAEA")],
+"material": SubResource("StandardMaterial3D_4m8fa"),
+"name": "radrox",
+"primitive": 3,
+"uv_scale": Vector4(1.98425, 1.97816, 0, 0),
+"vertex_count": 76,
+"vertex_data": PackedByteArray("/38AAAAAxvH/fwAAAAD/P/9/AAAAAMbx/3///wAAxvH/f///AAD/v/9///8AAMbxitMAAOAe/z+K0wAA4B7G8YrTAADgHlTVitP//+AeAMCK0///4B7G8YrT///gHlTV//8AAA9t/z///wAAD21U1f//AAAPbeO4/////w9t/7//////D21U1f////8PbeO4jvAAAPfF/z+O8AAA98VxnI7wAAD3xeO4jvD///fF/7+O8P//98VxnI7w///3xeO4c6wAAP///z9zrAAA//8AgHOsAAD//3Gcc6z/////AIBzrP//////v3Os/////3Gci1MAAP//cZyLUwAA////P4tTAAD//wCAi1P/////cZyLU/////8AgItT//////+/cA8AAPfF47hwDwAA98VxnHAPAAD3xf8/cA////fF47hwD///98VxnHAP///3xf+/AAAAAA9t47gAAAAAD21U1QAAAAAPbf8/AAD//w9t47gAAP//D21U1QAA//8Pbf+/dCwAAOAeVNV0LAAA4B7G8XQsAADgHv8/dCz//+AeVNV0LP//4B7G8XQs///gHgDA/38AAAAAkeL/f///AAC86f9///8AALbcjvAAAPfFj7aO8AAA98UgpYtT/////xjfi1P/////R5eLU/////8FsnQsAADgHg3ZdCwAAOAeOdz/f///AACl6v//AAAPba3G/////w9tjcSO8AAA98Vupo7wAAD3xXeUi1MAAP//9ZOLUwAA//9Do4tT/////02Vi1P/////9KWLU//////tt3QsAADgHkjOdCwAAOAevOD/f///AAD/f/9/AAD/f///+v8BgP9/AAAAAP9//38AAP9/AABv/uF8/38AAP9/AAAAAP9//38AAP9/AAAs/1p+/38AAP9/AAAAAP9//38AAP9/AAC0/2p//38AAP9/AAAAAP9//3////9/AAD/f///////f/9/AAD/f///AAD/f/9/////f////3///9L/FYD/f////3///wAA/3//f////3////7//3//f////3///wAA/3//f////3///8b+m4D/f////3///wAA/3//f////3///+D8joH/fwAA/3////9/AAD/fwAAJjojY/9/AABsaZDv/3///wM6Xun/f////3////9/AAD/fwAA/38AAP9/AAD/f////3////9/////f////3////9/////f///")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_23x1a")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qkltx"]
+render_priority = 0
+shader = ExtResource("2_arvk2")
+shader_parameter/point_size = null
+shader_parameter/roughness = null
+shader_parameter/metallic_texture_channel = null
+shader_parameter/specular = null
+shader_parameter/metallic = null
+shader_parameter/emission = null
+shader_parameter/emission_energy = null
+shader_parameter/uv1_scale = null
+shader_parameter/uv1_offset = null
+shader_parameter/uv2_scale = null
+shader_parameter/uv2_offset = null
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/resolution = Vector2i(320, 240)
+shader_parameter/affine_mapping = false
+shader_parameter/alpha_scissor = 0.5
+shader_parameter/jitter = 0.25
+shader_parameter/texture_albedo = ExtResource("1_674lo")
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_tkd23"]
+height = 0.991114
+radius = 0.349946
+
+[node name="RadRox" type="RigidBody3D" groups=["light_motion"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.48531, 0)
+
+[node name="radrox" type="MeshInstance3D" parent="."]
+mesh = SubResource("ArrayMesh_tvmng")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("ShaderMaterial_qkltx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CylinderShape3D_tkd23")

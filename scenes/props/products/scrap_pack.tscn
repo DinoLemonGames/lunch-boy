@@ -1,0 +1,78 @@
+[gd_scene load_steps=8 format=4 uid="uid://4l6chfcr78vn"]
+
+[ext_resource type="Texture2D" uid="uid://dbqo32sef6qyp" path="res://models/glb files/Products/scrap_pack_ScrapPack.png" id="1_xfhim"]
+[ext_resource type="Shader" path="res://shaders/psx.gdshader" id="2_upa5s"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vchs1"]
+resource_name = "Scrap Pack"
+cull_mode = 2
+albedo_texture = ExtResource("1_xfhim")
+texture_filter = 2
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_u63vp"]
+_surfaces = [{
+"aabb": AABB(-1, -1, -1, 2, 2, 2),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray("AAAGAAQAAAACAAYAAwAGAAIAAwAHAAYABwAEAAYABwAFAAQABQADAAEABQAHAAMAAQACAAAAAQADAAIABQAAAAQABQABAAAA"),
+"name": "Scrap Pack",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("/////wAAAAD//wAAAAAAAP///////wAA//8AAP//AAAAAP//AAAAAAAAAAAAAAAAAAD/////AAAAAAAA//8AAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_kff0g"]
+resource_name = "scrap_pack_Cube"
+_surfaces = [{
+"aabb": AABB(-1, -1, -1, 2, 2, 2),
+"attribute_data": PackedByteArray("UvGPUyh/HwV/QkdUmkGG+FLxXat/QrerW4CPVSh/AlXrAEdUmkGIqFuAxajrALerWkPBV3ivj1M9Qx8FWkOlpJh9hvh4r12rrwnBV/JBj1U9QwJVrwmlpJh9iKjyQcWo"),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray("AQAUAA4AAQAHABQACgATAAYACgAXABMAFQAMABIAFQAPAAwAEAAJAAMAEAAWAAkABQAIAAIABQALAAgAEQAAAA0AEQAEAAAA"),
+"material": SubResource("StandardMaterial3D_vchs1"),
+"name": "Scrap Pack",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("/////wAAAAD/////AAD/v/////8AAP+///8AAAAAAAD//wAAAAAAAP//AAAAAP+/////////AID/////////v/////////+///8AAP//AAD//wAA//8AgP//AAD///+/AAD//wAAAAAAAP//AAAAAAAA//8AAP+/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD/////AAAAAP////8AgAAA//////+/AAAAAP//AAAAAAAA//8AAAAAAAD//wCA////f////3//fwAA/3//P////3//fwAA/3///////3//fwAA/3//P/9/////fwAA/z//f////3////9//z//f/9//z////9//z//f/9///////9//z//f/9//z//f///")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_u63vp")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_oogv2"]
+render_priority = 0
+shader = ExtResource("2_upa5s")
+shader_parameter/point_size = null
+shader_parameter/roughness = null
+shader_parameter/metallic_texture_channel = null
+shader_parameter/specular = null
+shader_parameter/metallic = null
+shader_parameter/emission = null
+shader_parameter/emission_energy = null
+shader_parameter/uv1_scale = null
+shader_parameter/uv1_offset = null
+shader_parameter/uv2_scale = null
+shader_parameter/uv2_offset = null
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/resolution = Vector2i(320, 240)
+shader_parameter/affine_mapping = false
+shader_parameter/alpha_scissor = 0.5
+shader_parameter/jitter = 0.25
+shader_parameter/texture_albedo = ExtResource("1_xfhim")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_d2xc3"]
+size = Vector3(1.2135, 1.21289, 0.9104)
+
+[node name="ScrapPack" type="RigidBody3D" groups=["light_motion"]]
+
+[node name="Cube" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.45, 0, 0, 0)
+mesh = SubResource("ArrayMesh_kff0g")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("ShaderMaterial_oogv2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1.0142, 0, 0, 0, 1.0142, 0, 0, 0, 1.0142, -0.00167134, 0, 0)
+shape = SubResource("BoxShape3D_d2xc3")

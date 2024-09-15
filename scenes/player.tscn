@@ -188,7 +188,7 @@ text = "Prompt
 horizontal_alignment = 1
 
 [node name="Hand" type="Marker3D" parent="Head/Camera3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.4383)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.61895)
 
 [node name="Generic6DOFJoint3D" type="Generic6DOFJoint3D" parent="Head/Camera3D"]
 node_a = NodePath("../StaticBody3D")
@@ -212,6 +212,8 @@ volume_db = -30.0
 stream = SubResource("AudioStreamRandomizer_y1r40")
 volume_db = -30.0
 pitch_scale = 0.5
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
 
 [connection signal="timeout" from="Head/Camera3D/Stomach/TummyTimer" to="Head/Camera3D/Stomach" method="_on_tummy_timer_timeout"]
 [connection signal="timeout" from="Head/Camera3D/Watch/SecTimer" to="Head/Camera3D/Watch" method="_on_sec_timer_timeout"]

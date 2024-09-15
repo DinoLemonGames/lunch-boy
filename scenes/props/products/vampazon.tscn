@@ -1,0 +1,77 @@
+[gd_scene load_steps=8 format=4 uid="uid://c4scsws3wspbu"]
+
+[ext_resource type="Texture2D" uid="uid://b045cpn857ul5" path="res://models/glb files/Products/Vampazon_Vampazon.png" id="1_dkpsl"]
+[ext_resource type="Shader" path="res://shaders/psx.gdshader" id="2_1pi6i"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3gx6p"]
+size = Vector3(3.7561, 0.842773, 1.33105)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ter3m"]
+resource_name = "Material"
+cull_mode = 2
+albedo_texture = ExtResource("1_dkpsl")
+texture_filter = 2
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_6doq3"]
+_surfaces = [{
+"aabb": AABB(-1, -1, -1, 2, 2, 2),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray("AAAGAAQAAAACAAYAAwAGAAIAAwAHAAYABwAEAAYABwAFAAQABQADAAEABQAHAAMAAQACAAAAAQADAAIABQAAAAQABQABAAAA"),
+"name": "Material",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("/////wAAAAD//wAAAAAAAP///////wAA//8AAP//AAAAAP//AAAAAAAAAAAAAAAAAAD/////AAAAAAAA//8AAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_lbb66"]
+resource_name = "Vampazon_Cube"
+_surfaces = [{
+"aabb": AABB(-1, -1, -1, 2, 2, 2),
+"attribute_data": PackedByteArray("CX56oEvJVSV1JJyYBYeP4Ql+09l1JAbkcshmnUvJPYgWB5yYBYcDo6PI9tgWBwbkuAbCmH3BqKJcgUUnuAZr5K5Cj+F9wQHc1yTYl7eG7aBcgS6K1ySA465Ch6LohmDX"),
+"format": 34896613399,
+"index_count": 36,
+"index_data": PackedByteArray("AQAUAA4AAQAHABQACgATAAYACgAXABMAFQAMABIAFQAPAAwAEAAJAAMAEAAWAAkABQAIAAIABQALAAgAEQAAAA0AEQAEAAAA"),
+"material": SubResource("StandardMaterial3D_ter3m"),
+"name": "Material",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("/////wAA////////AAAAwP////8AAP+///8AAAAA/7///wAAAAD/////AAAAAP+/////////aIL///////8AwP////////+///8AAP///7///wAA//+bgP//AAD///+/AAD//wAA/78AAP//AAD//wAA//8AAADAAAAAAAAA/78AAAAAAAD/vwAAAAAAAP//AAD//////78AAP////+bgAAA/////wDAAAAAAP///78AAAAA////vwAAAAD//y+BYoKc/Yj9OoH/fwAAAAD/f2KCnP3/fwAA/3//f4j9OoH/fwAAPgB9gP9//3//fwAAO392/mKCnP2I/TqBO392/j4AfYBigpz9O392/v9//3+I/TqBO392/n0A+YD/////")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_6doq3")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7b7ax"]
+render_priority = 0
+shader = ExtResource("2_1pi6i")
+shader_parameter/point_size = null
+shader_parameter/roughness = null
+shader_parameter/metallic_texture_channel = null
+shader_parameter/specular = null
+shader_parameter/metallic = null
+shader_parameter/emission = null
+shader_parameter/emission_energy = null
+shader_parameter/uv1_scale = null
+shader_parameter/uv1_offset = null
+shader_parameter/uv2_scale = null
+shader_parameter/uv2_offset = null
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/resolution = Vector2i(320, 240)
+shader_parameter/affine_mapping = false
+shader_parameter/alpha_scissor = 0.5
+shader_parameter/jitter = 0.25
+shader_parameter/texture_albedo = ExtResource("1_dkpsl")
+
+[node name="Vampazon" type="RigidBody3D" groups=["light_motion"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_3gx6p")
+
+[node name="Cube" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.8, 0, 0, 0, 0.4, 0, 0, 0, 0.650811, 0, 0, 0)
+mesh = SubResource("ArrayMesh_lbb66")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("ShaderMaterial_7b7ax")

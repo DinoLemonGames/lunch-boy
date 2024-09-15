@@ -1,0 +1,77 @@
+[gd_scene load_steps=8 format=4 uid="uid://i67c6lc6o3lk"]
+
+[ext_resource type="Texture2D" uid="uid://j3i71uswa021" path="res://models/glb files/Products/Nukik_NuKik.png" id="1_pq6yh"]
+[ext_resource type="Shader" path="res://shaders/psx.gdshader" id="2_bqken"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fhxfw"]
+resource_name = "Nukik"
+cull_mode = 2
+albedo_texture = ExtResource("1_pq6yh")
+texture_filter = 2
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_ps7md"]
+_surfaces = [{
+"aabb": AABB(-1.09532, -1, -1.09532, 2.19064, 2, 2.19064),
+"format": 34896613377,
+"index_count": 84,
+"index_data": PackedByteArray("AAAGAAQAAAACAAYACgAGAAIACgAJAAYACQAEAAYACQALAAQABQADAAEABQAHAAMACAACAAAACAAKAAIACwAAAAQACwAIAAAADgAIAAsADgAMAAgADAAKAAgADAANAAoADwALAAkADwAOAAsADQAJAAoADQAPAAkAAwAPAA0AAwAHAA8ABwAOAA8ABwAFAA4AAQANAAwAAQADAA0ABQAMAA4ABQABAAwA"),
+"name": "Nukik",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 16,
+"vertex_data": PackedByteArray("/////wAAAADb9AAAIwsAAP///////wAA2/QAANv0AAAAAP//AAAAACMLAAAjCwAAAAD/////AAAjCwAA2/QAAKr/1MDZAAAAdADUwCX/AACq/9TAJf8AAHQA1MDZAAAA2/QSvSMLAADb9BK92/QAACMLEr0jCwAAIwsSvdv0AAA=")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_iged7"]
+resource_name = "Nukik_Cube_001"
+_surfaces = [{
+"aabb": AABB(-1.09532, -1, -1.09532, 2.19064, 2, 2.19064),
+"attribute_data": PackedByteArray("PkDMf9t/0xWcfzaAZn/1vqRA7nvqgG97F38xgw6A0lU8QGGAZn8OfrGAM3tIQG97VEGcgVp/zH9BQEoVIRD7fyBAYr/Af+573n+cgYFAMYN0QMFUeEH7fyBAen4aQjN7PkCthj5AeotOgDh8nH8sjN5/L413f6eE50D5iYFAxo5+f/mJF3/Gjqw/OHw8QFeMVEEvje1Ap4Raf62GWn96iz5AX4ekQPlYToDufOqAold+f6qKsYCIWKw/7nxIQKJXARBPVe1AV4Vaf1+HwH/5WFdBT1V3f1eF50CqihpCiFg="),
+"format": 34896613399,
+"index_count": 84,
+"index_data": PackedByteArray("AQAUAA4AAQAHABQAIQATAAYAIQAfABMAHAAMABIAHAAkAAwAEAAJAAMAEAAWAAkAGwAIAAIAGwAjAAgAJwAAAA0AJwAZAAAAMgAYACYAMgAoABgAKgAiABoAKgAuACIANQAlAB0ANQAxACUALAAeACAALAA2AB4ACgA3AC0ACgAXADcAFQAwADQAFQAPADAABQAvACsABQALAC8AEQApADMAEQAEACkA"),
+"material": SubResource("StandardMaterial3D_fhxfw"),
+"name": "Nukik",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 56,
+"vertex_data": PackedByteArray("/////wAA////////AAD/v/////8AAP+/2/QAACML/7/b9AAAIwv//9v0AAAjC/+/////////mID/////////v/////////+/2/QAANv0/7/b9AAA2/QAgNv0AADb9P+/AAD//wAA/78AAP//AAD//wAA//8AAP+/IwsAACML/78jCwAAIwv/vyMLAAAjC///AAD//////78AAP////+YgAAA//////+/IwsAANv0/78jCwAA2/T/vyMLAADb9ACAqv/UwNkA//+q/9TA2QD//6r/1MDZAIPOqv/UwNkA/790ANTAJf//v3QA1MAl/3HOdADUwCX/47J0ANTAJf+YgKr/1MAl/+Oyqv/UwCX/mICq/9TAJf+Dzqr/1MAl//+/dADUwNkA/790ANTA2QBxznQA1MDZAP//dADUwNkA///b9BK9Iwv//9v0Er0jC///2/QSvSMLg87b9BK9Iwv/v9v0Er3b9OOy2/QSvdv0AIDb9BK92/SDztv0Er3b9P+/IwsSvSML/78jCxK9IwtxziMLEr0jC///IwsSvSML//8jCxK92/T/vyMLEr3b9HHOIwsSvdv047IjCxK92/QAgO6A/v80/2l+1n+5ANQAlX//f////38AAAAA/3/y/uZ91n+5ANQAlX//f////38AAP5+fv/ugP7/dv/ufv9////UAJV//3/+//5+fv8AAP9/NP9pfv9////UAJV//3///5y1/v/ugP7/+VkLTNZ/uQD+fn7/DzQH2gAA/38AAP9/AAD/fwAA/3/5WQtM1n+5AP5+fv8PNAfanLX+/+6A/v+ctf7//3/+//lZC0z/fwAAAAD/f/9////5WQtM/38AAP9///8PNAfanLX+//9//v//f///DzQH2gAA/3//f///")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_ps7md")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cxiof"]
+render_priority = 0
+shader = ExtResource("2_bqken")
+shader_parameter/point_size = null
+shader_parameter/roughness = null
+shader_parameter/metallic_texture_channel = null
+shader_parameter/specular = null
+shader_parameter/metallic = null
+shader_parameter/emission = null
+shader_parameter/emission_energy = null
+shader_parameter/uv1_scale = null
+shader_parameter/uv1_offset = null
+shader_parameter/uv2_scale = null
+shader_parameter/uv2_offset = null
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/resolution = Vector2i(320, 240)
+shader_parameter/affine_mapping = false
+shader_parameter/alpha_scissor = 0.5
+shader_parameter/jitter = 0.25
+shader_parameter/texture_albedo = ExtResource("1_pq6yh")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_el8yl"]
+size = Vector3(1.24585, 0.625, 0.943359)
+
+[node name="Nukik" type="RigidBody3D" groups=["light_motion"]]
+
+[node name="Cube_001" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.6, 0, 0, 0, 0.3, 0, 0, 0, 0.45, 0, 0, 0)
+mesh = SubResource("ArrayMesh_iged7")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("ShaderMaterial_cxiof")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_el8yl")
