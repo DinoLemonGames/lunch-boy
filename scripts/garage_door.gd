@@ -42,11 +42,17 @@ func _process(delta):
 		if follow4.progress_ratio > .98:
 			state = States.OPEN
 	if state == States.CLOSING:
-		follow1.progress_ratio = lerp(follow1.progress_ratio, follow1_start, SPEED)
-		follow2.progress_ratio = lerp(follow2.progress_ratio, follow2_start, SPEED)
-		follow3.progress_ratio = lerp(follow3.progress_ratio, follow3_start, SPEED)
-		follow4.progress_ratio = lerp(follow4.progress_ratio, follow4_start, SPEED)
-		if follow1.progress_ratio < 0.006:
+		if follow1.progress_ratio > 0.0158:
+			follow1.progress_ratio = lerp(follow1.progress_ratio, follow1_start, SPEED)
+			follow2.progress_ratio = lerp(follow2.progress_ratio, follow2_start, SPEED)
+			follow3.progress_ratio = lerp(follow3.progress_ratio, follow3_start, SPEED)
+			follow4.progress_ratio = lerp(follow4.progress_ratio, follow4_start, SPEED)
+		elif follow1.progress_ratio < 0.0158 and follow1.progress_ratio > 0.01:
+			follow1.progress_ratio = lerp(follow1.progress_ratio, follow1_start, SPEED*10)
+			follow2.progress_ratio = lerp(follow2.progress_ratio, follow2_start, SPEED*10)
+			follow3.progress_ratio = lerp(follow3.progress_ratio, follow3_start, SPEED*10)
+			follow4.progress_ratio = lerp(follow4.progress_ratio, follow4_start, SPEED*10)
+		elif follow1.progress_ratio < 0.01:
 			state = States.CLOSED
 
 func _on_garage_button_interacted(body):

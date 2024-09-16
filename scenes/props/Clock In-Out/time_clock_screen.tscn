@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://co6sfbt26vp3q"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1fhy3"]
+albedo_color = Color(0, 0, 0, 1)
+roughness = 0.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_kgmng"]
+material = SubResource("StandardMaterial3D_1fhy3")
+size = Vector3(3.445, 2.11, 0.185)
+
+[node name="TimeClockScreen" type="StaticBody3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_kgmng")

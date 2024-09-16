@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://u2fgvdawyr4s"]
+[gd_scene load_steps=32 format=3 uid="uid://u2fgvdawyr4s"]
 
 [ext_resource type="PackedScene" uid="uid://6gs11pnmf4lk" path="res://scenes/player.tscn" id="1_gf5af"]
 [ext_resource type="Shader" path="res://shaders/ps1_post_processing.gdshader" id="1_yyrm2"]
@@ -18,6 +18,9 @@
 [ext_resource type="PackedScene" uid="uid://dnwixuk57l7s2" path="res://scenes/props/products/rad_shield.tscn" id="16_lygvk"]
 [ext_resource type="PackedScene" uid="uid://i67c6lc6o3lk" path="res://scenes/props/products/nukik.tscn" id="17_nlbnk"]
 [ext_resource type="PackedScene" uid="uid://03w836qd52wg" path="res://scenes/props/products/malice_maid.tscn" id="18_nu4md"]
+[ext_resource type="PackedScene" uid="uid://co6sfbt26vp3q" path="res://scenes/props/Clock In-Out/time_clock_screen.tscn" id="19_rjnba"]
+[ext_resource type="PackedScene" uid="uid://cpsgymbxi16jb" path="res://scenes/props/Clock In-Out/clock_break_button.tscn" id="20_qik1e"]
+[ext_resource type="PackedScene" uid="uid://cwgaqc50h1knt" path="res://scenes/props/Clock In-Out/clock_in_button.tscn" id="21_04mmu"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0u6t1"]
 shader = ExtResource("1_yyrm2")
@@ -143,7 +146,7 @@ environment = SubResource("Environment_5fl0s")
 script = ExtResource("3_hv00i")
 
 [node name="Player" parent="SubViewport/JobCorpWarehouse" groups=["player"] instance=ExtResource("1_gf5af")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.87599, 1.19957, 30.1937)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.275938, 1.19957, 36.8437)
 
 [node name="FloorCSG" type="CSGBox3D" parent="SubViewport/JobCorpWarehouse"]
 transform = Transform3D(100, 0, 0, 0, 0.034, 0, 0, 0, 80, 0, 0, 0)
@@ -387,7 +390,7 @@ transform = Transform3D(0.28818, 0, -0.957577, 0, 1, 0, 0.957577, 0, 0.28818, 1.
 prompt_message = "Garage Door"
 
 [node name="GarageDoor" parent="SubViewport/JobCorpWarehouse" instance=ExtResource("12_1kblk")]
-transform = Transform3D(0.0245543, 0, -0.999699, 0, 1, 0, 0.999699, 0, 0.0245543, 1.51525, 0.787078, 20.4703)
+transform = Transform3D(0.0245543, 0, -0.999699, 0, 1, 0, 0.999699, 0, 0.0245543, 1.51525, 0.632534, 20.4703)
 
 [node name="Products" type="Node3D" parent="SubViewport/JobCorpWarehouse"]
 transform = Transform3D(0.0245543, 0, -0.999699, 0, 1, 0, 0.999699, 0, 0.0245543, 1.51525, 0.787078, 20.4703)
@@ -446,4 +449,17 @@ transform = Transform3D(0.297441, 0, -0.95474, 0, 1, 0, 0.95474, 0, 0.297441, 0.
 [node name="MaliceMaid3" parent="SubViewport/JobCorpWarehouse" instance=ExtResource("18_nu4md")]
 transform = Transform3D(0.0225302, 0, -0.999746, 0, 1, 0, 0.999746, 0, 0.0225302, -0.36795, 1.03386, 10.0788)
 
+[node name="TimeClockScreen" parent="SubViewport/JobCorpWarehouse" instance=ExtResource("19_rjnba")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -4.97275, 1.75834, 31.6217)
+
+[node name="ClockIn" parent="SubViewport/JobCorpWarehouse/TimeClockScreen" instance=ExtResource("21_04mmu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.793688, 0.0214999, 0.0425177)
+prompt_message = "Clock In"
+
+[node name="ClockBreak" parent="SubViewport/JobCorpWarehouse/TimeClockScreen" instance=ExtResource("20_qik1e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.779987, 0.0214999, 0.0425177)
+prompt_message = "Go on Break"
+
 [connection signal="interacted" from="SubViewport/JobCorpWarehouse/GarageButton" to="SubViewport/JobCorpWarehouse/GarageDoor" method="_on_garage_button_interacted"]
+[connection signal="interacted" from="SubViewport/JobCorpWarehouse/TimeClockScreen/ClockIn" to="SubViewport/JobCorpWarehouse/Player" method="_on_clock_in_interacted"]
+[connection signal="interacted" from="SubViewport/JobCorpWarehouse/TimeClockScreen/ClockBreak" to="SubViewport/JobCorpWarehouse/Player" method="_on_clock_break_interacted"]

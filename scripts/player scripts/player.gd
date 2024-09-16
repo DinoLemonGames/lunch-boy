@@ -37,6 +37,11 @@ var played_pants = false
 var played_walking = false
 var landed = false
 
+# Watch and clocking in and out
+signal on_clocked_in
+signal on_clocked_break
+signal on_clocked_out
+
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
@@ -139,3 +144,10 @@ func _on_view_lock_change(_locked):
 		crosshair.visible = false
 	elif !locked:
 		crosshair.visible = true
+
+
+func _on_clock_in_interacted(body):
+	on_clocked_in.emit()
+
+func _on_clock_break_interacted(body):
+	on_clocked_break.emit()

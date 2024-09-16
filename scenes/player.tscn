@@ -41,6 +41,7 @@ shadow_color = Color(0.388235, 0.32549, 0.101961, 0.619608)
 [sub_resource type="LabelSettings" id="LabelSettings_yvj37"]
 font = ExtResource("6_o42pp")
 font_size = 9
+font_color = Color(0.995824, 0.892237, 0.255842, 1)
 outline_size = 4
 outline_color = Color(0, 0, 0, 1)
 shadow_size = 4
@@ -215,6 +216,9 @@ pitch_scale = 0.5
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 
+[connection signal="on_clocked_break" from="." to="Head/Camera3D/Watch" method="_on_player_clocked_break"]
+[connection signal="on_clocked_in" from="." to="Head/Camera3D/Watch" method="_on_player_clocked_in"]
+[connection signal="on_clocked_out" from="." to="Head/Camera3D/Watch" method="_on_player_clocked_out"]
 [connection signal="timeout" from="Head/Camera3D/Stomach/TummyTimer" to="Head/Camera3D/Stomach" method="_on_tummy_timer_timeout"]
 [connection signal="timeout" from="Head/Camera3D/Watch/SecTimer" to="Head/Camera3D/Watch" method="_on_sec_timer_timeout"]
 [connection signal="view_lock_change" from="Head/Camera3D/PickupRay" to="." method="_on_view_lock_change"]

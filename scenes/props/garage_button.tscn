@@ -77,6 +77,18 @@ tracks/2/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ButtonPush:volume_db")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [40.0]
+}
 
 [sub_resource type="Animation" id="Animation_3hl7i"]
 resource_name = "button_pushed"
@@ -117,6 +129,18 @@ tracks/2/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ButtonPush:volume_db")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [80.0]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ois63"]
 _data = {
@@ -146,8 +170,13 @@ libraries = {
 
 [node name="ButtonPush" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("5_pyjbm")
+volume_db = 40.0
+max_db = 6.0
+panning_strength = 0.0
 
 [node name="ButtonSpringBack" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("6_iyvbo")
+volume_db = -10.0
+panning_strength = 0.0
 
 [connection signal="interacted" from="." to="." method="_on_interacted"]
