@@ -22,7 +22,7 @@ var yellow = Color("#fee441")
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	
-	if state == clock.IN:
+	if state == clock.IN or state == clock.BREAK:
 		# Count down the shift time
 		var second = "0" + str(sec)
 		if sec < 10:
@@ -54,7 +54,7 @@ func _on_player_clocked_in():
 
 func _on_player_clocked_break():
 	if state == clock.IN:
-		$SecTimer.stop()
+		#$SecTimer.stop()
 		$Label.self_modulate = yellow
 		texture = load("res://textures/GUI/watch/watch_yellow.png")
 		state = clock.BREAK
